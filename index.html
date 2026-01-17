@@ -21,9 +21,7 @@
   --border:#e5e7eb;
   --shadow:0 28px 70px rgba(2,6,23,.12);
   --accent:#2563eb;
-  --accent2:#22c55e;
   --soft:#eef3ff;
-  --soft2:#eafff2;
 }
 
 *{box-sizing:border-box}
@@ -40,24 +38,16 @@ a{color:inherit;text-decoration:none}
 /* HEADER */
 header{
   position:sticky;top:0;z-index:20;
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.85);
   backdrop-filter:saturate(140%) blur(10px);
-  border-bottom:1px solid rgba(229,231,235,.8);
+  border-bottom:1px solid var(--border);
 }
 .nav{
   display:flex;align-items:center;justify-content:space-between;gap:18px;
   padding:18px 0;
 }
-.brand img{height:92px;display:block}
-.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-.pill{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:10px 14px;border-radius:999px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.9);
-  font-weight:700;
-}
-.pill .sub{font-weight:600;color:var(--muted)}
+.brand img{height:90px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
 .btn{
   display:inline-flex;align-items:center;gap:10px;
   padding:10px 14px;border-radius:12px;
@@ -67,6 +57,14 @@ header{
 }
 .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
 .btn.soft{background:var(--soft);color:#0b3aa8;border-color:#dbe7ff}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 14px;border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-weight:800;
+}
+.pill span{color:var(--muted);font-weight:600}
 
 /* HERO */
 .hero{
@@ -80,23 +78,38 @@ header{
   background:var(--soft);border:1px solid #dbe7ff;
   color:#0b3aa8;font-weight:800;font-size:13px;
 }
-h1{margin:14px 0 14px;font-size:50px;line-height:1.05;letter-spacing:-1.3px}
-.hero p{margin:0 0 22px;color:var(--muted);font-size:18px;max-width:58ch}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
+.hero p{margin:0 0 22px;color:var(--muted);font-size:18px;max-width:60ch}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* OWNER CARD (FIXED: FLEX, NO OVERLAP) */
 .card{
   background:#fff;border:1px solid var(--border);border-radius:22px;
   box-shadow:var(--shadow);
 }
 .owner{
   padding:22px;
-  display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center;
+  display:flex;
+  gap:22px;
+  align-items:flex-start;
+  flex-wrap:wrap;
 }
-.owner img{width:110px;height:110px;object-fit:cover;border-radius:18px;border:1px solid var(--border)}
+.owner img{
+  width:170px;
+  height:170px;
+  object-fit:cover;
+  border-radius:20px;
+  border:1px solid var(--border);
+}
+.owner > div{
+  flex:1;
+  min-width:240px;
+}
 .owner .name{font-weight:900;font-size:18px}
-.owner .meta{color:var(--muted);font-weight:600}
+.owner .meta{color:var(--muted);font-weight:600;margin-top:4px}
 .trust{
   margin-top:14px;padding:16px 18px;border-radius:18px;
-  background:linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+  background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
   border:1px solid var(--border);
   display:grid;gap:8px;
 }
@@ -104,14 +117,12 @@ h1{margin:14px 0 14px;font-size:50px;line-height:1.05;letter-spacing:-1.3px}
 .trust span{color:var(--muted);font-weight:600;font-size:14px}
 
 /* SERVICES */
-.section{
-  padding:26px 0 70px;
-}
+.section{padding:30px 0 70px}
 .section-title{
   display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  margin:16px 0 16px;
+  margin:16px 0;
 }
-.section-title h2{margin:0;font-size:34px;letter-spacing:-.8px}
+.section-title h2{margin:0;font-size:34px;letter-spacing:-.7px}
 .section-title p{margin:0;color:var(--muted);font-weight:600}
 .grid{
   display:grid;
@@ -126,50 +137,24 @@ h1{margin:14px 0 14px;font-size:50px;line-height:1.05;letter-spacing:-1.3px}
   cursor:pointer;
 }
 .service:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(2,6,23,.08);border-color:#cbd5e1}
-.service-top{display:flex;gap:12px;align-items:flex-start}
-.icon{
-  width:46px;height:46px;border-radius:16px;
-  display:grid;place-items:center;
-  border:1px solid #dbe7ff;background:var(--soft);
-  flex:0 0 auto;
-}
-.icon svg{width:22px;height:22px;stroke:var(--accent)}
-.service h3{margin:0;font-size:18px;letter-spacing:-.2px}
-.service .desc{margin:6px 0 10px;color:var(--muted);font-weight:600;font-size:14px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
-.tag{
-  font-size:12px;font-weight:800;
-  color:#0b3aa8;background:var(--soft);
-  border:1px solid #dbe7ff;
-  padding:6px 10px;border-radius:999px;
-}
+.service h3{margin:0;font-size:18px}
+.service p{margin:6px 0 0;color:var(--muted);font-weight:600;font-size:14px}
 
-/* MODAL QUOTE FLOW */
+/* MODAL (QUOTE) */
 .modal{
-  position:fixed;inset:0;
-  background:rgba(2,6,23,.55);
-  display:none;align-items:center;justify-content:center;
-  padding:18px;
-  z-index:50;
+  position:fixed;inset:0;background:rgba(2,6,23,.55);
+  display:none;align-items:center;justify-content:center;padding:18px;z-index:50;
 }
 .modal.open{display:flex}
-.modal .panel{
-  width:min(880px, 100%);
+.panel{
+  width:min(880px,100%);
   background:#fff;border-radius:22px;border:1px solid var(--border);
-  box-shadow:0 40px 120px rgba(2,6,23,.35);
-  overflow:hidden;
+  box-shadow:0 40px 120px rgba(2,6,23,.35);overflow:hidden;
 }
-.modal .panel-head{
+.panel-head{
   padding:18px 20px;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  display:flex;align-items:center;justify-content:space-between;
   background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
-}
-.panel-head .left{display:grid;gap:2px}
-.panel-head .title{font-weight:900;font-size:18px}
-.panel-head .sub{color:var(--muted);font-weight:600;font-size:13px}
-.x{
-  border:1px solid var(--border);background:#fff;border-radius:12px;
-  padding:10px 12px;font-weight:900;cursor:pointer;
 }
 .panel-body{padding:18px 20px}
 .steps{display:flex;gap:10px;margin:0 0 14px;padding:0;list-style:none}
@@ -177,38 +162,31 @@ h1{margin:14px 0 14px;font-size:50px;line-height:1.05;letter-spacing:-1.3px}
 .dot.on{background:var(--accent)}
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:760px){.formgrid{grid-template-columns:1fr}}
-.field label{display:block;font-size:12px;color:var(--muted);font-weight:800;margin:0 0 6px}
-.field input,.field textarea, .field select{
-  width:100%;
-  padding:12px 12px;
-  border-radius:14px;border:1px solid var(--border);
-  font-family:inherit;font-size:15px;outline:none;
-  background:#fff;
+.field label{display:block;font-size:12px;color:var(--muted);font-weight:800;margin-bottom:6px}
+.field input,.field textarea,.field select{
+  width:100%;padding:12px;border-radius:14px;border:1px solid var(--border);
+  font-family:inherit;font-size:15px;
 }
 .field textarea{min-height:120px;resize:vertical}
 .actions-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px}
 .small{color:var(--muted);font-weight:600;font-size:12px}
-.primary{background:var(--accent);color:#fff;border-color:transparent}
-.secondary{background:var(--soft);color:#0b3aa8;border-color:#dbe7ff}
 
 /* FOOTER */
 footer{
   background:#0b1220;color:#cbd5e1;
   padding:34px 0;margin-top:30px;
 }
-footer .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
 footer a{color:#fff;font-weight:800}
 
 /* MOBILE */
 @media (max-width:900px){
   .container{padding:0 16px}
   .brand img{height:70px}
-  .pill{padding:8px 10px;font-size:13px}
-  .btn{padding:8px 10px;font-size:13px}
   h1{font-size:34px}
   .hero{grid-template-columns:1fr;padding:46px 0 26px}
-  .owner{grid-template-columns:90px 1fr}
-  .owner img{width:90px;height:90px}
+  .btn{padding:8px 10px;font-size:13px}
+  .pill{padding:8px 10px;font-size:13px}
+  .owner img{width:150px;height:150px}
 }
 </style>
 </head>
@@ -218,15 +196,9 @@ footer a{color:#fff;font-weight:800}
 <header>
   <div class="container">
     <div class="nav">
-      <div class="brand">
-        <img src="logo.PNG" alt="Tidy Builders logo">
-      </div>
-
+      <div class="brand"><img src="logo.PNG" alt="Tidy Builders"></div>
       <div class="actions">
-        <div class="pill">
-          <span>Text:</span>
-          <span class="sub">(818) 277-4433</span>
-        </div>
+        <div class="pill">Text <span>(818) 277-4433</span></div>
         <a class="btn primary" href="sms:+18182774433">Text Now</a>
         <a class="btn soft" href="mailto:tidybuildersco@gmail.com">Email</a>
       </div>
@@ -236,232 +208,128 @@ footer a{color:#fff;font-weight:800}
 
 <main class="container">
 
-  <section class="hero">
+<section class="hero">
+  <div>
+    <div class="kicker">Los Angeles • Handyman + Construction</div>
+    <h1>Clean work. Clear communication. Done right.</h1>
+    <p>Electrical, plumbing, painting, carpentry, mounting, installations, and EV chargers.</p>
+    <div class="hero-cta">
+      <button class="btn primary" id="openQuote">Get a Quote</button>
+      <a class="btn soft" href="sms:+18182774433">Text Photos</a>
+    </div>
+  </div>
+
+  <div class="card owner">
+    <img src="bor1.png" alt="Owner of Tidy Builders">
     <div>
-      <div class="kicker">Los Angeles • Handyman + Construction</div>
-      <h1>Clean work. Clear communication. Done right.</h1>
-      <p>
-        Electrical, plumbing, painting, carpentry, mounting, installations, and EV charger projects.
-        Tap a service to start a quote in 30 seconds.
-      </p>
-      <div class="hero-cta">
-        <button class="btn primary" id="openQuote">Get a Quote</button>
-        <a class="btn secondary" href="sms:+18182774433">Text Photos</a>
+      <div class="name">Owner-operated</div>
+      <div class="meta">Serving Los Angeles, CA</div>
+      <div class="trust">
+        <div><b>Fast estimates</b> <span>Text photos for quick quotes</span></div>
+        <div><b>Respectful</b> <span>Clean, careful work</span></div>
+        <div><b>Transparent</b> <span>Clear scope before work starts</span></div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div>
-      <div class="card owner">
-        <img src="bor1.png" alt="Owner of Tidy Builders">
-        <div>
-          <div class="name">Owner-operated</div>
-          <div class="meta">Serving Los Angeles, CA</div>
-          <div class="trust">
-            <div><b>Fast estimates</b> <span>Text photos for a quick quote</span></div>
-            <div><b>Respect for your home</b> <span>Clean, careful work</span></div>
-            <div><b>Transparent</b> <span>We confirm scope up front</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="section">
+  <div class="section-title">
+    <h2>Services</h2>
+    <p>Click a service to start a quote</p>
+  </div>
 
-  <section class="section">
-    <div class="section-title">
-      <h2>Services</h2>
-      <p>Pick one to open the questionnaire</p>
-    </div>
-
-    <div class="grid">
-      <div class="service" data-service="Electrical" data-subitems="Outlets & switches|Lighting installs|Troubleshooting">
-        <div class="service-top">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2L3 14h7l-1 8 12-14h-7l-1-6z"/></svg>
-          </div>
-          <div>
-            <h3>Electrical</h3>
-            <div class="desc">Light installs and troubleshooting.</div>
-            <ul class="tags" aria-hidden="true">
-              <li class="tag">Outlets</li><li class="tag">Lights</li><li class="tag">Fixes</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="service" data-service="Plumbing" data-subitems="Faucets & fixtures|Leaks|Toilets">
-        <div class="service-top">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M8 2v6a4 4 0 0 0 4 4h4v10"/><path d="M16 22h6"/></svg>
-          </div>
-          <div>
-            <h3>Plumbing</h3>
-            <div class="desc">Repairs and fixture replacements.</div>
-            <ul class="tags" aria-hidden="true">
-              <li class="tag">Leaks</li><li class="tag">Fixtures</li><li class="tag">Repairs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="service" data-service="Painting" data-subitems="Interior walls|Trim & doors|Touch-ups">
-        <div class="service-top">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 14l7-7 6 6-7 7H4v-6z"/><path d="M14 6l4-4 2 2-4 4"/></svg>
-          </div>
-          <div>
-            <h3>Painting</h3>
-            <div class="desc">Clean prep and sharp finishes.</div>
-            <ul class="tags" aria-hidden="true">
-              <li class="tag">Walls</li><li class="tag">Trim</li><li class="tag">Finish</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="service" data-service="Mounting & Installations" data-subitems="TV mounting|Shelves|Hardware & fixtures">
-        <div class="service-top">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16v10H4z"/><path d="M8 20h8"/></svg>
-          </div>
-          <div>
-            <h3>Mounting & Installations</h3>
-            <div class="desc">Secure installs done right.</div>
-            <ul class="tags" aria-hidden="true">
-              <li class="tag">TVs</li><li class="tag">Shelves</li><li class="tag">Fixtures</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="service" data-service="Carpentry" data-subitems="Doors & alignment|Trim/baseboards|Repairs">
-        <div class="service-top">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M2 22l7-7"/><path d="M14 3l7 7-4 4-7-7z"/><path d="M10 7l7 7"/></svg>
-          </div>
-          <div>
-            <h3>Carpentry</h3>
-            <div class="desc">Repairs and small builds.</div>
-            <ul class="tags" aria-hidden="true">
-              <li class="tag">Doors</li><li class="tag">Trim</li><li class="tag">Repair</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="service" data-service="EV Charger Installation" data-subitems="Home install|Assessment|Best placement">
-        <div class="service-top">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 2h8v8H7z"/><path d="M10 6h2"/><path d="M17 10v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V10"/><path d="M21 7v4"/></svg>
-          </div>
-          <div>
-            <h3>EV Charger Installation</h3>
-            <div class="desc">Residential EV charger installs.</div>
-            <ul class="tags" aria-hidden="true">
-              <li class="tag">Home</li><li class="tag">Install</li><li class="tag">Setup</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="grid">
+    <div class="service" data-service="Electrical">Electrical</div>
+    <div class="service" data-service="Plumbing">Plumbing</div>
+    <div class="service" data-service="Painting">Painting</div>
+    <div class="service" data-service="Carpentry">Carpentry</div>
+    <div class="service" data-service="Mounting">Mounting & Installations</div>
+    <div class="service" data-service="EV Charger">EV Charger Installation</div>
+  </div>
+</section>
 
 </main>
 
-<!-- QUOTE MODAL -->
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Get a quote">
+<div class="modal" id="modal">
   <div class="panel">
     <div class="panel-head">
-      <div class="left">
-        <div class="title" id="qTitle">Get a Quote</div>
-        <div class="sub" id="qSub">Choose a subservice, then describe the job.</div>
+      <div>
+        <strong id="qTitle">Get a Quote</strong><br>
+        <span class="small">Tell us what you need</span>
       </div>
-      <button class="x" id="close">Close</button>
+      <button class="btn" id="close">Close</button>
     </div>
-
     <div class="panel-body">
-      <ul class="steps" aria-hidden="true">
+      <ul class="steps">
         <li class="dot on" id="d1"></li>
         <li class="dot" id="d2"></li>
         <li class="dot" id="d3"></li>
       </ul>
 
-      <!-- Step 1: Subitems -->
       <div id="qs1">
         <div class="formgrid">
           <div class="field">
-            <label for="qService">Service</label>
-            <input id="qService" disabled />
+            <label>Service</label>
+            <input id="qService" disabled>
           </div>
           <div class="field">
-            <label for="qSubservice">What specifically?</label>
-            <select id="qSubservice"></select>
+            <label>Details</label>
+            <select id="qSub">
+              <option value="">Choose…</option>
+              <option>Install</option>
+              <option>Repair</option>
+              <option>Replace</option>
+            </select>
           </div>
         </div>
-
         <div class="actions-row">
-          <span class="small">Next unlocks after you choose a subservice.</span>
+          <span class="small">Select to continue</span>
           <button class="btn primary" id="next1" disabled>Next</button>
         </div>
       </div>
 
-      <!-- Step 2: Details -->
       <div id="qs2" style="display:none">
         <div class="formgrid">
           <div class="field">
-            <label for="qArea">Address / neighborhood</label>
-            <input id="qArea" placeholder="Example: Sherman Oaks / 90025" />
+            <label>Address / Area</label>
+            <input id="qArea">
           </div>
           <div class="field">
-            <label for="qTime">Preferred timing</label>
-            <input id="qTime" placeholder="Example: This week, afternoons" />
+            <label>Preferred time</label>
+            <input id="qTime">
           </div>
         </div>
-
         <div class="formgrid" style="margin-top:12px">
           <div class="field">
-            <label for="qDetails">Describe the issue</label>
-            <textarea id="qDetails" placeholder="What’s happening? What do you want installed/fixed?"></textarea>
+            <label>Description</label>
+            <textarea id="qDetails"></textarea>
           </div>
           <div class="field">
-            <label for="qPhotos">Photo links (optional)</label>
-            <textarea id="qPhotos" placeholder="Paste links, or write: 'Will text photos'"></textarea>
+            <label>Photo links (optional)</label>
+            <textarea id="qPhotos"></textarea>
           </div>
         </div>
-
         <div class="actions-row">
-          <button class="btn secondary" id="back2">Back</button>
+          <button class="btn soft" id="back2">Back</button>
           <button class="btn primary" id="next2">Next</button>
         </div>
       </div>
 
-      <!-- Step 3: Contact + Send -->
       <div id="qs3" style="display:none">
         <div class="formgrid">
           <div class="field">
-            <label for="qName">Your name</label>
-            <input id="qName" placeholder="Full name" />
+            <label>Name</label>
+            <input id="qName">
           </div>
           <div class="field">
-            <label for="qPhone">Your phone</label>
-            <input id="qPhone" placeholder="(###) ###-####" />
+            <label>Phone</label>
+            <input id="qPhone">
           </div>
         </div>
-
-        <div class="formgrid" style="margin-top:12px">
-          <div class="field">
-            <label for="qEmail">Your email (optional)</label>
-            <input id="qEmail" placeholder="name@email.com" />
-          </div>
-          <div class="field">
-            <label>Send</label>
-            <a class="btn primary" id="send" href="#">Email request to Tidy Builders</a>
-            <div class="small" style="margin-top:8px">Opens your email app (no backend).</div>
-          </div>
-        </div>
-
         <div class="actions-row">
-          <button class="btn secondary" id="back3">Back</button>
-          <button class="btn soft" id="copy">Copy summary</button>
+          <button class="btn soft" id="back3">Back</button>
+          <a class="btn primary" id="send">Email Request</a>
         </div>
       </div>
 
@@ -471,142 +339,43 @@ footer a{color:#fff;font-weight:800}
 
 <footer>
   <div class="container">
-    <div class="row">
-      <div>© <span id="y"></span> Tidy Builders · Los Angeles, CA</div>
-      <div>
-        <a href="sms:+18182774433">Text (818) 277-4433</a> ·
-        <a href="mailto:tidybuildersco@gmail.com">tidybuildersco@gmail.com</a>
-      </div>
-    </div>
+    © <span id="y"></span> Tidy Builders · Los Angeles ·
+    <a href="sms:+18182774433">Text (818) 277-4433</a> ·
+    <a href="mailto:tidybuildersco@gmail.com">tidybuildersco@gmail.com</a>
   </div>
 </footer>
 
 <script>
-document.getElementById("y").textContent = new Date().getFullYear();
+document.getElementById("y").textContent=new Date().getFullYear();
 
-const modal = document.getElementById("modal");
-const openQuote = document.getElementById("openQuote");
-const closeBtn = document.getElementById("close");
+const modal=document.getElementById("modal");
+const openQuote=document.getElementById("openQuote");
+const closeBtn=document.getElementById("close");
+const qTitle=document.getElementById("qTitle");
+const qService=document.getElementById("qService");
+const qSub=document.getElementById("qSub");
+const next1=document.getElementById("next1");
+const qs1=document.getElementById("qs1");
+const qs2=document.getElementById("qs2");
+const qs3=document.getElementById("qs3");
 
-const qTitle = document.getElementById("qTitle");
-const qService = document.getElementById("qService");
-const qSubservice = document.getElementById("qSubservice");
-const next1 = document.getElementById("next1");
-
-const qs1 = document.getElementById("qs1");
-const qs2 = document.getElementById("qs2");
-const qs3 = document.getElementById("qs3");
-
-const d1 = document.getElementById("d1");
-const d2 = document.getElementById("d2");
-const d3 = document.getElementById("d3");
-
-const qArea = document.getElementById("qArea");
-const qTime = document.getElementById("qTime");
-const qDetails = document.getElementById("qDetails");
-const qPhotos = document.getElementById("qPhotos");
-
-const qName = document.getElementById("qName");
-const qPhone = document.getElementById("qPhone");
-const qEmail = document.getElementById("qEmail");
-
-const next2 = document.getElementById("next2");
-const back2 = document.getElementById("back2");
-const back3 = document.getElementById("back3");
-const send = document.getElementById("send");
-const copyBtn = document.getElementById("copy");
-
-let chosenService = "";
-let chosenSub = "";
-
-function setStep(n){
-  qs1.style.display = n===1 ? "block" : "none";
-  qs2.style.display = n===2 ? "block" : "none";
-  qs3.style.display = n===3 ? "block" : "none";
-  d1.className = "dot" + (n===1 ? " on" : "");
-  d2.className = "dot" + (n===2 ? " on" : "");
-  d3.className = "dot" + (n===3 ? " on" : "");
-}
-
-function openModal(service, subitems){
-  chosenService = service;
-  qTitle.textContent = "Get a Quote — " + service;
-  qService.value = service;
-
-  qSubservice.innerHTML = "";
-  const opts = (subitems || "").split("|").filter(Boolean);
-  qSubservice.insertAdjacentHTML("beforeend", `<option value="">Choose one...</option>`);
-  opts.forEach(s => qSubservice.insertAdjacentHTML("beforeend", `<option>${s}</option>`));
-
-  next1.disabled = true;
-  chosenSub = "";
-  setStep(1);
-  modal.classList.add("open");
-}
-
-function closeModal(){
-  modal.classList.remove("open");
-}
-
-openQuote.addEventListener("click", () => {
-  openModal("General Request", "Electrical|Plumbing|Painting|Carpentry|Mounting & Installations|EV Charger Installation");
+openQuote.onclick=()=>{qTitle.textContent="Get a Quote";modal.classList.add("open");}
+closeBtn.onclick=()=>modal.classList.remove("open");
+document.querySelectorAll(".service").forEach(s=>{
+  s.onclick=()=>{
+    qService.value=s.dataset.service;
+    modal.classList.add("open");
+  };
 });
-
-closeBtn.addEventListener("click", closeModal);
-modal.addEventListener("click", (e) => { if(e.target === modal) closeModal(); });
-document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeModal(); });
-
-document.querySelectorAll(".service").forEach(card => {
-  card.addEventListener("click", () => {
-    openModal(card.dataset.service, card.dataset.subitems);
-  });
-});
-
-qSubservice.addEventListener("change", () => {
-  chosenSub = qSubservice.value;
-  next1.disabled = !chosenSub;
-});
-
-next1.addEventListener("click", () => setStep(2));
-back2.addEventListener("click", () => setStep(1));
-next2.addEventListener("click", () => setStep(3));
-back3.addEventListener("click", () => setStep(2));
-
-function buildSummary(){
-  return (
-    "Service: " + (chosenService || "-") + "\n" +
-    "Subservice: " + (chosenSub || "-") + "\n" +
-    "Area: " + (qArea.value || "-") + "\n" +
-    "Preferred timing: " + (qTime.value || "-") + "\n" +
-    "Details: " + (qDetails.value || "-") + "\n" +
-    "Photo links: " + (qPhotos.value || "-") + "\n\n" +
-    "Customer name: " + (qName.value || "-") + "\n" +
-    "Customer phone: " + (qPhone.value || "-") + "\n" +
-    "Customer email: " + (qEmail.value || "-")
-  );
-}
-
-function updateMailto(){
-  const subject = encodeURIComponent("Quote request — " + (chosenService || "Tidy Builders"));
-  const body = encodeURIComponent(buildSummary());
-  send.href = "mailto:tidybuildersco@gmail.com?subject=" + subject + "&body=" + body;
-}
-["input","change"].forEach(evt=>{
-  [qArea,qTime,qDetails,qPhotos,qName,qPhone,qEmail,qSubservice].forEach(el=>{
-    el.addEventListener(evt, updateMailto);
-  });
-});
-updateMailto();
-
-copyBtn.addEventListener("click", async () => {
-  try{
-    await navigator.clipboard.writeText(buildSummary());
-    copyBtn.textContent = "Copied";
-    setTimeout(()=>copyBtn.textContent="Copy summary", 1200);
-  }catch(e){
-    alert("Copy failed. You can manually select and copy the text after sending email.");
-  }
-});
+qSub.onchange=()=>next1.disabled=!qSub.value;
+next1.onclick=()=>{qs1.style.display="none";qs2.style.display="block";}
+document.getElementById("back2").onclick=()=>{qs2.style.display="none";qs1.style.display="block";}
+document.getElementById("next2").onclick=()=>{qs2.style.display="none";qs3.style.display="block";}
+document.getElementById("back3").onclick=()=>{qs3.style.display="none";qs2.style.display="block";}
+document.getElementById("send").onclick=()=>{
+  const body=`Service: ${qService.value}\nDetails: ${qSub.value}\nArea: ${qArea.value}\nTime: ${qTime.value}\nNotes: ${qDetails.value}\nPhotos: ${qPhotos.value}\nName: ${qName.value}\nPhone: ${qPhone.value}`;
+  document.getElementById("send").href="mailto:tidybuildersco@gmail.com?subject=Quote Request&body="+encodeURIComponent(body);
+};
 </script>
 
 </body>
