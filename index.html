@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Tidy Builders | Handyman & Construction Services in Los Angeles</title>
-  <meta name="description" content="Professional handyman, electrical, plumbing, painting, carpentry, and EV charger installation services in Los Angeles." />
+  <meta name="description" content="Professional handyman, electrical, plumbing, painting, carpentry, and EV charger installation services in Los Angeles, CA." />
+  <link rel="canonical" href="https://www.tidybuilders.com/" />
 
-  <!-- Google Font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,42 +17,48 @@
     :root {
       --navy: #1e2a3a;
       --accent: #2563eb;
-      --light: #f4f6f9;
+      --accent-soft: #e8efff;
+      --bg: #f5f7fb;
       --white: #ffffff;
       --muted: #6b7280;
       --border: #e5e7eb;
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       color: var(--navy);
-      background: var(--light);
+      background: var(--bg);
       line-height: 1.6;
     }
 
-    a { text-decoration: none; }
+    a { text-decoration: none; color: inherit; }
 
     /* ---------- HEADER ---------- */
     header {
       background: var(--white);
       border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .nav {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 28px 24px;
+      padding: 26px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 24px;
     }
 
     .brand img {
@@ -59,17 +66,28 @@
     }
 
     .brand span {
-      font-size: 38px;
+      font-size: 32px;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
 
-    .call {
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta {
       background: var(--accent);
       color: white;
-      padding: 14px 22px;
+      padding: 14px 20px;
       border-radius: 10px;
       font-weight: 600;
+    }
+
+    .cta.secondary {
+      background: var(--accent-soft);
+      color: var(--accent);
     }
 
     /* ---------- HERO ---------- */
@@ -95,52 +113,30 @@
       margin-bottom: 32px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 22px;
-      border-radius: 10px;
-      font-weight: 600;
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn.secondary {
-      border: 1px solid var(--border);
-      background: white;
-      color: var(--navy);
-    }
-
     .hero-card {
-      background: white;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      background: var(--white);
+      padding: 36px;
+      border-radius: 22px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
       text-align: center;
     }
 
     .hero-card img {
       width: 100%;
       max-width: 260px;
-      border-radius: 16px;
+      border-radius: 18px;
       margin-bottom: 18px;
     }
 
     .hero-card strong {
       display: block;
       font-size: 18px;
+      margin-bottom: 4px;
     }
 
     /* ---------- SERVICES ---------- */
-    section.services {
-      background: white;
+    .services {
+      background: var(--white);
       padding: 90px 24px;
     }
 
@@ -159,9 +155,15 @@
     }
 
     .service {
-      background: var(--light);
+      background: var(--bg);
       padding: 28px;
-      border-radius: 18px;
+      border-radius: 20px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
 
     .service h3 {
@@ -198,7 +200,7 @@
     footer {
       background: var(--navy);
       color: white;
-      padding: 40px 24px;
+      padding: 50px 24px;
       text-align: center;
       font-size: 14px;
     }
@@ -208,12 +210,27 @@
       font-weight: 600;
     }
 
+    /* ---------- MOBILE ---------- */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
+        padding: 60px 20px;
       }
+
       .hero h1 {
-        font-size: 36px;
+        font-size: 34px;
+      }
+
+      .brand span {
+        font-size: 22px;
+      }
+
+      .brand img {
+        height: 64px;
+      }
+
+      .nav {
+        padding: 18px 16px;
       }
     }
   </style>
@@ -224,10 +241,13 @@
 <header>
   <div class="nav">
     <div class="brand">
-      <img src="logo.png" alt="Tidy Builders logo">
+      <img src="logo.PNG" alt="Tidy Builders logo">
       <span>Tidy Builders</span>
     </div>
-    <a class="call" href="tel:+18182774433">Call (818) 277-4433</a>
+    <div class="contact-actions">
+      <a class="cta" href="tel:+18182774433">Call (818) 277-4433</a>
+      <a class="cta secondary" href="mailto:tidybuildersco@gmail.com">Email</a>
+    </div>
   </div>
 </header>
 
@@ -237,17 +257,17 @@
     <div>
       <h1>Reliable Handyman & Construction Services in Los Angeles</h1>
       <p>
-        Professional electrical, plumbing, painting, carpentry, installations,
-        and EV charger services. Clean work. Clear communication.
+        Professional electrical, plumbing, painting, carpentry, mounting,
+        installations, and EV charger services. Clean work. Clear communication.
       </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="tel:+18182774433">Get a Quote</a>
-        <a class="btn secondary" href="mailto:tidybuildersco@gmail.com">Email Us</a>
+      <div class="contact-actions">
+        <a class="cta" href="tel:+18182774433">Get a Quote</a>
+        <a class="cta secondary" href="mailto:tidybuildersco@gmail.com">Email Us</a>
       </div>
     </div>
 
     <div class="hero-card">
-      <img src="bor.PNG" alt="Owner of Tidy Builders">
+      <img src="for.PNG" alt="Owner of Tidy Builders">
       <strong>Owner-operated & local</strong>
       <span>Serving Los Angeles, CA</span>
     </div>
@@ -256,30 +276,12 @@
   <section class="services">
     <h2>Our Services</h2>
     <div class="service-grid">
-      <div class="service">
-        <h3>Electrical</h3>
-        <p>Light electrical work, upgrades, and installations.</p>
-      </div>
-      <div class="service">
-        <h3>Plumbing</h3>
-        <p>Fixture replacements, repairs, and minor plumbing.</p>
-      </div>
-      <div class="service">
-        <h3>Painting</h3>
-        <p>Interior and exterior painting with clean finishes.</p>
-      </div>
-      <div class="service">
-        <h3>Carpentry</h3>
-        <p>Doors, trim, repairs, and small custom builds.</p>
-      </div>
-      <div class="service">
-        <h3>Mounting & Installations</h3>
-        <p>TVs, shelves, fixtures, hardware, appliances.</p>
-      </div>
-      <div class="service">
-        <h3>EV Charger Installation</h3>
-        <p>Residential EV charger installs (site-dependent).</p>
-      </div>
+      <div class="service"><h3>Electrical</h3><p>Light electrical work and installations.</p></div>
+      <div class="service"><h3>Plumbing</h3><p>Fixture replacements and minor plumbing.</p></div>
+      <div class="service"><h3>Painting</h3><p>Interior and exterior painting services.</p></div>
+      <div class="service"><h3>Carpentry</h3><p>Doors, trim, repairs, and custom work.</p></div>
+      <div class="service"><h3>Mounting & Installations</h3><p>TVs, shelves, fixtures, hardware.</p></div>
+      <div class="service"><h3>EV Charger Installation</h3><p>Residential EV charger installs.</p></div>
     </div>
   </section>
 
@@ -288,7 +290,7 @@
     <p>
       We focus on clean work, respect for your space, and dependable service.
       Tidy Builders is growing responsibly toward full construction licensing,
-      with transparency and professionalism at every step.
+      with transparency and professionalism.
     </p>
   </section>
 
@@ -296,7 +298,8 @@
 
 <footer>
   © <span id="y"></span> Tidy Builders · Los Angeles ·
-  <a href="tel:+18182774433">(818) 277-4433</a>
+  <a href="tel:+18182774433">(818) 277-4433</a> ·
+  <a href="mailto:tidybuildersco@gmail.com">tidybuildersco@gmail.com</a>
 </footer>
 
 <script>
