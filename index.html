@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Tidy Builders | Handyman & Construction Services in Los Angeles</title>
+<meta name="description" content="Professional handyman, electrical, plumbing, painting, carpentry, mounting, installations, and EV charger installation services in Los Angeles." />
+<link rel="canonical" href="https://www.tidybuilders.com/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,173 +14,227 @@
 
 <style>
 :root{
-  --bg:#f6f8fc;
-  --card:#fff;
+  --bg:#f5f7fb;
+  --white:#ffffff;
   --ink:#0f172a;
-  --muted:#475569;
-  --border:#e2e8f0;
+  --muted:#64748b;
+  --border:#e5e7eb;
+  --shadow:0 28px 70px rgba(2,6,23,.12);
   --accent:#2563eb;
-  --shadow:0 28px 70px rgba(15,23,42,.15);
+  --soft:#eef3ff;
+  --good:#16a34a;
 }
+
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Inter,system-ui,sans-serif;
-  background:var(--bg);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:radial-gradient(900px 480px at 15% 0%, #eaf1ff 0%, var(--bg) 55%);
   color:var(--ink);
+  line-height:1.55;
 }
-.container{max-width:1200px;margin:auto;padding:0 28px}
-a{text-decoration:none;color:inherit}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
 /* HEADER */
 header{
-  position:sticky;top:0;z-index:10;
-  background:#fff;border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--border);
 }
 .nav{
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:12px 0;
   height:110px;
 }
+.brand{display:flex;align-items:center;height:100%}
 .brand img{
-  height:140px;
+  height:150px;
   max-height:100%;
+  object-fit:contain;
 }
-.actions{display:flex;gap:12px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
 .btn{
-  padding:14px 18px;
-  border-radius:14px;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:12px;
   border:1px solid var(--border);
   background:#fff;
-  font-weight:700;
+  font-weight:800;
 }
-.btn.primary{background:var(--accent);color:#fff;border:none}
+.btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+.btn.soft{background:var(--soft);color:#0b3aa8;border-color:#dbe7ff}
 
 /* HERO */
 .hero{
-  padding:80px 0 60px;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:40px;
+  padding:70px 0 40px;
+  display:grid;grid-template-columns:1.12fr .88fr;gap:34px;
+  align-items:center;
 }
-.hero h1{font-size:48px;margin-bottom:14px}
-.hero p{font-size:18px;color:var(--muted)}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 12px;border-radius:999px;
+  background:var(--soft);border:1px solid #dbe7ff;
+  color:#0b3aa8;font-weight:800;font-size:13px;
+}
+h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
+.hero p{margin:0 0 22px;color:var(--muted);font-size:18px;max-width:60ch}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 
 /* CARD */
 .card{
-  background:var(--card);
-  border-radius:26px;
-  border:1px solid var(--border);
+  background:#fff;border:1px solid var(--border);border-radius:22px;
   box-shadow:var(--shadow);
 }
+
+/* OWNER CARD */
 .owner{
-  padding:26px;
+  padding:22px;
   display:flex;
-  gap:26px;
+  gap:22px;
+  align-items:flex-start;
   flex-wrap:wrap;
 }
 .owner img{
   width:220px;
-  aspect-ratio:1/1;
+  aspect-ratio:1/1;     /* FORCE SQUARE */
   object-fit:cover;
-  border-radius:20px;
+  border-radius:22px;
   border:1px solid var(--border);
 }
-.owner b{font-size:22px}
+.owner > div{
+  flex:1;
+  min-width:260px;
+}
+.owner .name{font-weight:900;font-size:18px}
+.owner .meta{color:var(--muted);font-weight:600;margin-top:4px}
+.trust{
+  margin-top:14px;padding:16px 18px;border-radius:18px;
+  background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
+  border:1px solid var(--border);
+  display:grid;gap:8px;
+}
+.trust b{font-weight:900}
+.trust span{color:var(--muted);font-weight:600;font-size:14px}
 
 /* SERVICES */
-.section{padding:60px 0}
+.section{padding:30px 0 70px}
+.section-title{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin:16px 0;
+}
+.section-title h2{margin:0;font-size:34px;letter-spacing:-.7px}
+.section-title p{margin:0;color:var(--muted);font-weight:600}
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:14px;
 }
+@media (max-width:980px){.grid{grid-template-columns:1fr}}
 .service{
-  padding:22px;
-  border-radius:20px;
-  border:1px solid var(--border);
-  background:#fff;
+  padding:18px;border-radius:20px;border:1px solid var(--border);
+  background:linear-gradient(180deg,#ffffff 0%,#f9fbff 100%);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
   cursor:pointer;
 }
+.service:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(2,6,23,.08);border-color:#cbd5e1}
+.service h3{margin:0;font-size:18px}
+.service p{margin:6px 0 0;color:var(--muted);font-weight:600;font-size:14px}
 
-/* EXTRA TRUST SECTION */
-.trust{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+/* ABOUT SECTION */
+.about{
+  padding:30px;
 }
-.trust div{
-  background:#fff;
-  padding:22px;
-  border-radius:20px;
-  border:1px solid var(--border);
+.about .headline{
+  font-size:30px;
+  letter-spacing:-.6px;
+  margin:0 0 6px 0;
+}
+.about .sub{
+  margin:0 0 18px 0;
+  color:var(--muted);
   font-weight:600;
 }
+.about .note{
+  margin:12px 0 0 0;
+  color:var(--muted);
+  font-weight:600;
+  font-size:13px;
+}
 
-/* MODAL */
+/* MODAL (QUOTE) */
 .modal{
-  position:fixed;inset:0;
-  background:rgba(15,23,42,.6);
-  display:none;align-items:center;justify-content:center;
+  position:fixed;inset:0;background:rgba(2,6,23,.55);
+  display:none;align-items:center;justify-content:center;padding:18px;z-index:50;
 }
 .modal.open{display:flex}
 .panel{
-  background:#fff;
-  width:min(900px,100%);
-  border-radius:26px;
-  border:1px solid var(--border);
+  width:min(920px,100%);
+  background:#fff;border-radius:22px;border:1px solid var(--border);
+  box-shadow:0 40px 120px rgba(2,6,23,.35);overflow:hidden;
 }
-.panel-body{padding:30px}
+.panel-head{
+  padding:18px 20px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
+}
+.panel-body{padding:18px 20px}
+.steps{display:flex;gap:10px;margin:0 0 14px;padding:0;list-style:none}
+.dot{width:10px;height:10px;border-radius:999px;background:var(--border)}
+.dot.on{background:var(--accent)}
+.formgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:760px){.formgrid{grid-template-columns:1fr}}
+.field label{display:block;font-size:12px;color:var(--muted);font-weight:800;margin-bottom:6px}
+.field input,.field textarea,.field select{
+  width:100%;padding:12px;border-radius:14px;border:1px solid var(--border);
+  font-family:inherit;font-size:15px;
+}
+.field textarea{min-height:120px;resize:vertical}
+.actions-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px}
+.small{color:var(--muted);font-weight:600;font-size:12px}
 
-.steps{display:flex;gap:10px;margin-bottom:20px}
-.step{
-  width:12px;height:12px;border-radius:50%;
-  background:var(--border);
-}
-.step.active{background:var(--accent)}
-
-.formgrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-.field label{
-  font-size:13px;
-  font-weight:700;
-  color:var(--muted);
-}
-.field input,.field select,.field textarea{
-  width:100%;
-  margin-top:6px;
-  padding:14px;
-  border-radius:14px;
-  border:1px solid var(--border);
-}
-
-.actions-row{
-  margin-top:24px;
-  display:flex;
-  justify-content:space-between;
-}
-
-.choice-boxes{
+/* FINAL ACTION BOXES */
+.final-actions{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
+  gap:12px;
 }
-.choice{
-  padding:22px;
-  border-radius:20px;
-  text-align:center;
-  font-weight:800;
+@media (max-width:760px){.final-actions{grid-template-columns:1fr}}
+.bigbox{
+  border-radius:18px;
+  padding:18px;
+  color:#fff;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
   cursor:pointer;
+  user-select:none;
 }
-.choice.email{background:#2563eb;color:#fff}
-.choice.text{background:#16a34a;color:#fff}
+.bigbox span{
+  font-weight:700;
+  opacity:.95;
+}
+.bigbox.email{background:var(--accent)}
+.bigbox.text{background:var(--good)}
+
+/* FOOTER */
+footer{
+  background:#0b1220;color:#cbd5e1;
+  padding:34px 0;margin-top:30px;
+}
+footer a{color:#fff;font-weight:800}
 
 /* MOBILE */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .grid,.trust{grid-template-columns:1fr}
+@media (max-width:900px){
+  .container{padding:0 16px}
+  .brand img{height:120px}
+  h1{font-size:34px}
+  .hero{grid-template-columns:1fr;padding:46px 0 26px}
+  .btn{padding:8px 10px;font-size:13px}
+  .nav{height:96px}
+  .owner img{width:170px}
 }
 </style>
 </head>
@@ -186,11 +242,13 @@ header{
 <body>
 
 <header>
-  <div class="container nav">
-    <div class="brand"><img src="logo.PNG"></div>
-    <div class="actions">
-      <a class="btn primary" href="sms:+18182774433">Text (818) 277-4433</a>
-      <a class="btn" href="mailto:tidybuildersco@gmail.com">Email</a>
+  <div class="container">
+    <div class="nav">
+      <div class="brand"><img src="logo.PNG" alt="Tidy Builders"></div>
+      <div class="actions">
+        <a class="btn primary" href="sms:+18182774433">Text (818) 277-4433</a>
+        <a class="btn soft" href="mailto:tidybuildersco@gmail.com">Email</a>
+      </div>
     </div>
   </div>
 </header>
@@ -199,118 +257,408 @@ header{
 
 <section class="hero">
   <div>
-    <h1>One call. Everything handled.</h1>
-    <p>Electrical, plumbing, painting, carpentry, installations, and more.</p>
-    <button class="btn primary" id="openQuote">Request a Quote</button>
+    <div class="kicker">Los Angeles • Handyman + Construction</div>
+    <h1>Clean work. Clear communication. Done right.</h1>
+    <p>Electrical, plumbing, painting, carpentry, mounting, installations, and EV chargers.</p>
+    <div class="hero-cta">
+      <button class="btn primary" id="openQuote" type="button">Get a Quote</button>
+      <a class="btn soft" href="sms:+18182774433">Text Photos</a>
+    </div>
   </div>
 
   <div class="card owner">
-    <img src="borh.PNG">
+    <img src="bor1.png" alt="Owner of Tidy Builders">
     <div>
-      <b>Borhan Kheiri</b><br>
-      Owner · Tidy Builders<br><br>
-      I take care of anything your home needs — so you don’t need anyone else.
+      <div class="name">Owner-operated</div>
+      <div class="meta">Serving Los Angeles, CA</div>
+      <div class="trust">
+        <div><b>Fast estimates</b> <span>Text photos for quick quotes</span></div>
+        <div><b>Respectful</b> <span>Clean, careful work</span></div>
+        <div><b>Transparent</b> <span>Clear scope before work starts</span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Services</h2>
+  <div class="section-title">
+    <h2>Services</h2>
+    <p>Click a service to start a quote</p>
+  </div>
+
   <div class="grid">
-    <div class="service" data-service="General">General Handyman</div>
-    <div class="service" data-service="Electrical">Electrical</div>
-    <div class="service" data-service="Plumbing">Plumbing</div>
-    <div class="service" data-service="Painting">Painting</div>
-    <div class="service" data-service="Carpentry">Carpentry</div>
-    <div class="service" data-service="EV Charger">EV Charger</div>
+    <div class="service" data-service="General">
+      <h3>General Handyman</h3>
+      <p>Multiple small jobs, repairs, and custom requests.</p>
+    </div>
+    <div class="service" data-service="Electrical">
+      <h3>Electrical</h3>
+      <p>Outlets, switches, lighting, troubleshooting.</p>
+    </div>
+    <div class="service" data-service="Plumbing">
+      <h3>Plumbing</h3>
+      <p>Leaks, fixtures, drains, toilets.</p>
+    </div>
+    <div class="service" data-service="Painting">
+      <h3>Painting</h3>
+      <p>Interior, exterior, touch-ups, full repaint.</p>
+    </div>
+    <div class="service" data-service="Carpentry">
+      <h3>Carpentry</h3>
+      <p>Doors, trim, cabinets, custom work.</p>
+    </div>
+    <div class="service" data-service="EV Charger Installation">
+      <h3>EV Charger Installation</h3>
+      <p>New install, upgrade, inspection.</p>
+    </div>
   </div>
 </section>
 
-<!-- EXTRA SECTION AT END -->
+<!-- ✅ END SECTION: ABOUT -->
 <section class="section">
-  <h2>Why Clients Choose Tidy Builders</h2>
-  <div class="trust">
-    <div>One trusted professional</div>
-    <div>Clean, careful work</div>
-    <div>Clear communication</div>
+  <div class="card owner about">
+    <img src="borh.PNG" alt="Borhan Kheiri">
+    <div>
+      <h2 class="headline">About</h2>
+      <p class="sub"><b>Borhan Kheiri</b> · Owner, Tidy Builders</p>
+      <p style="margin:0;color:var(--muted);font-weight:600;max-width:70ch">
+        Borhan handles jobs personally and treats every home with respect. His goal is simple:
+        be the one reliable pro you can call for anything your home needs, so you don’t have to hire multiple people.
+      </p>
+      <p class="note">Best way to reach him: text photos for a fast estimate.</p>
+    </div>
   </div>
 </section>
 
 </main>
 
 <!-- QUOTE MODAL -->
-<div class="modal" id="modal">
+<div class="modal" id="modal" aria-hidden="true">
   <div class="panel">
+    <div class="panel-head">
+      <div>
+        <strong id="qTitle">Get a Quote</strong><br>
+        <span class="small">3 quick steps</span>
+      </div>
+      <button class="btn" id="close" type="button">Close</button>
+    </div>
+
     <div class="panel-body">
+      <ul class="steps" aria-hidden="true">
+        <li class="dot on" id="d1"></li>
+        <li class="dot" id="d2"></li>
+        <li class="dot" id="d3"></li>
+      </ul>
 
-      <div class="steps">
-        <div class="step active"></div>
-        <div class="step"></div>
-        <div class="step"></div>
-      </div>
-
-      <div id="s1">
+      <!-- STEP 1 -->
+      <div id="qs1">
         <div class="formgrid">
-          <div class="field"><label>Service</label><select id="qService"></select></div>
-          <div class="field"><label>Job Type</label><input id="qType"></div>
-          <div class="field"><label>Room</label><input id="qRoom"></div>
+          <div class="field">
+            <label>Service</label>
+            <select id="qService"></select>
+          </div>
+          <div class="field">
+            <label>Type</label>
+            <select id="qSub"></select>
+          </div>
+          <div class="field">
+            <label>Part of the house</label>
+            <select id="qRoom">
+              <option value="">Choose…</option>
+              <option>Kitchen</option>
+              <option>Bathroom</option>
+              <option>Living room</option>
+              <option>Bedroom</option>
+              <option>Garage</option>
+              <option>Basement</option>
+              <option>Yard / Exterior</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <span class="small">Select all to continue</span>
+          <button class="btn primary" id="next1" type="button" disabled>Next</button>
         </div>
       </div>
 
-      <div id="s2" style="display:none">
-        <div class="field">
-          <label>Description</label>
-          <textarea id="qDetails"></textarea>
+      <!-- STEP 2 -->
+      <div id="qs2" style="display:none">
+        <div class="formgrid">
+          <div class="field">
+            <label>Address / Area</label>
+            <input id="qArea" placeholder="Example: Sherman Oaks / 90025">
+          </div>
+          <div class="field">
+            <label>Preferred time</label>
+            <input id="qTime" placeholder="Example: This week, afternoons">
+          </div>
+          <div class="field">
+            <label>Urgency</label>
+            <select id="qUrgency">
+              <option value="">Choose…</option>
+              <option>Emergency (ASAP)</option>
+              <option>Within 24–48 hours</option>
+              <option>Within a week</option>
+              <option>Flexible</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="formgrid" style="margin-top:12px">
+          <div class="field" style="grid-column:span 2">
+            <label>Description</label>
+            <textarea id="qDetails" placeholder="What do you need done? Add any details that matter."></textarea>
+          </div>
+          <div class="field">
+            <label>Photo links (optional)</label>
+            <textarea id="qPhotos" placeholder="Or write: 'Will text photos'"></textarea>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button class="btn soft" id="back2" type="button">Back</button>
+          <button class="btn primary" id="next2" type="button">Next</button>
         </div>
       </div>
 
-      <div id="s3" style="display:none">
-        <div class="choice-boxes">
-          <div class="choice email" id="emailBox">Email Quote</div>
-          <div class="choice text" id="textBox">Text Quote</div>
+      <!-- STEP 3 (FINAL) -->
+      <div id="qs3" style="display:none">
+        <div class="formgrid">
+          <div class="field">
+            <label>Your name</label>
+            <input id="qName" placeholder="Full name">
+          </div>
+          <div class="field">
+            <label>Your phone</label>
+            <input id="qPhone" placeholder="(###) ###-####">
+          </div>
+          <div class="field">
+            <label>Your email (optional)</label>
+            <input id="qEmail" placeholder="name@email.com">
+          </div>
         </div>
-      </div>
 
-      <div class="actions-row">
-        <button class="btn" id="back">Back</button>
-        <button class="btn primary" id="next">Next</button>
+        <div class="actions-row">
+          <button class="btn soft" id="back3" type="button">Back</button>
+          <div class="final-actions">
+            <div class="bigbox email" id="sendEmailBox" role="button" tabindex="0">
+              <div>Email Quote</div>
+              <span>tidybuildersco@gmail.com</span>
+            </div>
+            <div class="bigbox text" id="sendTextBox" role="button" tabindex="0">
+              <div>Text Quote</div>
+              <span>(818) 277-4433</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="small" style="margin-top:10px">
+          This opens your email/text app with everything filled in.
+        </div>
       </div>
 
     </div>
   </div>
 </div>
 
+<footer>
+  <div class="container">
+    © <span id="y"></span> Tidy Builders · Los Angeles ·
+    <a href="sms:+18182774433">Text (818) 277-4433</a> ·
+    <a href="mailto:tidybuildersco@gmail.com">tidybuildersco@gmail.com</a>
+  </div>
+</footer>
+
 <script>
+document.getElementById("y").textContent=new Date().getFullYear();
+
 const modal=document.getElementById("modal");
-const steps=document.querySelectorAll(".step");
-let step=0;
+const openQuote=document.getElementById("openQuote");
+const closeBtn=document.getElementById("close");
 
-const services=["General","Electrical","Plumbing","Painting","Carpentry","EV Charger"];
+const d1=document.getElementById("d1");
+const d2=document.getElementById("d2");
+const d3=document.getElementById("d3");
+
+const qs1=document.getElementById("qs1");
+const qs2=document.getElementById("qs2");
+const qs3=document.getElementById("qs3");
+
+const qTitle=document.getElementById("qTitle");
+
 const qService=document.getElementById("qService");
-services.forEach(s=>{let o=document.createElement("option");o.textContent=s;qService.appendChild(o);});
+const qSub=document.getElementById("qSub");
+const qRoom=document.getElementById("qRoom");
 
-function show(n){
-  ["s1","s2","s3"].forEach((id,i)=>{
-    document.getElementById(id).style.display=i===n?"block":"none";
-    steps[i].classList.toggle("active",i===n);
-  });
-  document.getElementById("next").style.display=n<2?"inline-block":"none";
+const qArea=document.getElementById("qArea");
+const qTime=document.getElementById("qTime");
+const qUrgency=document.getElementById("qUrgency");
+const qDetails=document.getElementById("qDetails");
+const qPhotos=document.getElementById("qPhotos");
+
+const qName=document.getElementById("qName");
+const qPhone=document.getElementById("qPhone");
+const qEmail=document.getElementById("qEmail");
+
+const next1=document.getElementById("next1");
+const next2=document.getElementById("next2");
+
+const back2=document.getElementById("back2");
+const back3=document.getElementById("back3");
+
+const sendEmailBox=document.getElementById("sendEmailBox");
+const sendTextBox=document.getElementById("sendTextBox");
+
+/* Service-specific type options */
+const TYPES = {
+  "General": ["Small repair", "Multiple tasks", "Inspection", "Other"],
+  "Electrical": ["Outlet / switch", "Lighting", "Troubleshooting", "Panel / wiring", "Other"],
+  "Plumbing": ["Leak", "Fixture install", "Drain issue", "Toilet / sink", "Other"],
+  "Painting": ["Interior", "Exterior", "Touch-ups", "Full repaint", "Other"],
+  "Carpentry": ["Door", "Trim", "Cabinet", "Custom work", "Other"],
+  "EV Charger Installation": ["New install", "Upgrade", "Inspection", "Other"]
+};
+
+function setDots(step){
+  d1.classList.toggle("on", step===1);
+  d2.classList.toggle("on", step===2);
+  d3.classList.toggle("on", step===3);
 }
-show(0);
 
-document.getElementById("openQuote").onclick=()=>modal.classList.add("open");
+function showStep(step){
+  qs1.style.display = step===1 ? "block" : "none";
+  qs2.style.display = step===2 ? "block" : "none";
+  qs3.style.display = step===3 ? "block" : "none";
+  setDots(step);
+}
+
+function openModalWithService(serviceName){
+  qTitle.textContent="Get a Quote";
+  modal.classList.add("open");
+
+  // reset step + fields that affect gating
+  showStep(1);
+
+  qRoom.value="";
+  qArea.value="";
+  qTime.value="";
+  qUrgency.value="";
+  qDetails.value="";
+  qPhotos.value="";
+  qName.value="";
+  qPhone.value="";
+  qEmail.value="";
+
+  // populate service dropdown
+  qService.innerHTML="";
+  Object.keys(TYPES).forEach(s=>{
+    const opt=document.createElement("option");
+    opt.value=s;
+    opt.textContent=s;
+    qService.appendChild(opt);
+  });
+
+  qService.value = serviceName || "General";
+  populateTypeOptions();
+  updateNext1();
+}
+
+function closeModal(){
+  modal.classList.remove("open");
+}
+
+function populateTypeOptions(){
+  const service = qService.value || "General";
+  const opts = TYPES[service] || TYPES["General"];
+  qSub.innerHTML = `<option value="">Choose…</option>` + opts.map(x=>`<option>${x}</option>`).join("");
+  qSub.value="";
+}
+
+function updateNext1(){
+  next1.disabled = !(qService.value && qSub.value && qRoom.value);
+}
+
+function buildSummary(){
+  const service = qService.value || "-";
+  const type = qSub.value || "-";
+  const room = qRoom.value || "-";
+
+  const area = qArea.value || "-";
+  const time = qTime.value || "-";
+  const urg = qUrgency.value || "-";
+
+  const details = qDetails.value || "-";
+  const photos = qPhotos.value || "-";
+
+  const name = qName.value || "-";
+  const phone = qPhone.value || "-";
+  const email = qEmail.value || "-";
+
+  return (
+`Service: ${service}
+Type: ${type}
+Part of house: ${room}
+
+Area: ${area}
+Preferred time: ${time}
+Urgency: ${urg}
+
+Description:
+${details}
+
+Photo links:
+${photos}
+
+Customer:
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+`);
+}
+
+/* Open/Close */
+openQuote.addEventListener("click", ()=>openModalWithService("General"));
+closeBtn.addEventListener("click", closeModal);
+modal.addEventListener("click", (e)=>{ if(e.target===modal) closeModal(); });
+document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeModal(); });
+
+/* Service cards open modal with preselected service */
 document.querySelectorAll(".service").forEach(s=>{
-  s.onclick=()=>{qService.value=s.dataset.service;modal.classList.add("open");};
+  s.addEventListener("click", ()=>openModalWithService(s.dataset.service));
 });
-document.getElementById("next").onclick=()=>{if(step<2){step++;show(step);}};
-document.getElementById("back").onclick=()=>{if(step>0){step--;show(step);}};
 
-document.getElementById("emailBox").onclick=()=>{
-  location.href="mailto:tidybuildersco@gmail.com?subject=Quote Request";
-};
-document.getElementById("textBox").onclick=()=>{
-  location.href="sms:+18182774433";
-};
+/* Step 1 dependencies */
+qService.addEventListener("change", ()=>{
+  populateTypeOptions();
+  updateNext1();
+});
+qSub.addEventListener("change", updateNext1);
+qRoom.addEventListener("change", updateNext1);
+
+/* Nav buttons */
+next1.addEventListener("click", ()=>showStep(2));
+back2.addEventListener("click", ()=>showStep(1));
+next2.addEventListener("click", ()=>showStep(3));
+back3.addEventListener("click", ()=>showStep(2));
+
+/* Final action boxes */
+function sendEmail(){
+  const subject = encodeURIComponent(`Quote Request — ${qService.value || "Tidy Builders"}`);
+  const body = encodeURIComponent(buildSummary());
+  window.location.href = `mailto:tidybuildersco@gmail.com?subject=${subject}&body=${body}`;
+}
+function sendText(){
+  const body = encodeURIComponent(buildSummary());
+  window.location.href = `sms:+18182774433?&body=${body}`;
+}
+
+sendEmailBox.addEventListener("click", sendEmail);
+sendTextBox.addEventListener("click", sendText);
+sendEmailBox.addEventListener("keydown", (e)=>{ if(e.key==="Enter"||e.key===" ") sendEmail(); });
+sendTextBox.addEventListener("keydown", (e)=>{ if(e.key==="Enter"||e.key===" ") sendText(); });
 </script>
 
 </body>
