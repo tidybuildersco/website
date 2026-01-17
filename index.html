@@ -1,147 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Tidy Builders | Handyman & Construction Services in Los Angeles</title>
-<meta name="description" content="Professional handyman, electrical, plumbing, painting, carpentry, installations, and EV charger services in Los Angeles." />
+<meta name="description" content="Tidy Builders provides professional handyman, electrical, plumbing, painting, carpentry, and EV charger installation services across Los Angeles." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#f5f7fb;
-  --white:#fff;
+  --bg:#f6f8fc;
+  --card:#ffffff;
   --ink:#0f172a;
-  --muted:#64748b;
-  --border:#e5e7eb;
+  --muted:#475569;
+  --border:#e2e8f0;
   --accent:#2563eb;
-  --soft:#eef3ff;
-  --shadow:0 28px 70px rgba(2,6,23,.12);
+  --accent-soft:#eef2ff;
+  --shadow:0 30px 80px rgba(15,23,42,.12);
 }
+
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Inter,system-ui,sans-serif;
-  background:var(--bg);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,#eef3ff 0%,var(--bg) 35%);
   color:var(--ink);
+  line-height:1.65;
 }
-a{text-decoration:none;color:inherit}
-.container{max-width:1200px;margin:auto;padding:0 24px}
 
-/* HEADER */
+a{text-decoration:none;color:inherit}
+.container{max-width:1240px;margin:0 auto;padding:0 28px}
+
+/* ================= HEADER ================= */
 header{
-  position:sticky;top:0;z-index:10;
-  background:#fff;border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
 }
 .nav{
-  display:flex;align-items:center;justify-content:space-between;
-  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:110px;
 }
-.brand img{height:140px;max-height:100%;object-fit:contain}
-.actions{display:flex;gap:10px}
+.brand{
+  display:flex;
+  align-items:center;
+  height:100%;
+}
+.brand img{
+  height:150px;
+  max-height:100%;
+  object-fit:contain;
+}
+.actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
 .btn{
-  padding:10px 14px;border-radius:12px;
+  padding:14px 18px;
+  border-radius:14px;
   border:1px solid var(--border);
-  background:#fff;font-weight:700;
+  background:#fff;
+  font-size:15px;
+  font-weight:700;
 }
-.btn.primary{background:var(--accent);color:#fff;border:none}
+.btn.primary{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
-  padding:70px 0;
+  padding:90px 0 60px;
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:32px;
+  grid-template-columns:1.15fr .85fr;
+  gap:48px;
 }
-.hero h1{font-size:48px;margin:10px 0}
-.hero p{color:var(--muted);font-size:18px}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero h1{
+  font-size:52px;
+  line-height:1.05;
+  letter-spacing:-1px;
+  margin:0 0 18px;
+}
+.hero p{
+  font-size:19px;
+  color:var(--muted);
+  max-width:65ch;
+}
+.hero-cta{
+  margin-top:28px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
 
-/* OWNER */
+/* ================= OWNER CARD ================= */
 .card{
-  background:#fff;border-radius:22px;
+  background:var(--card);
+  border-radius:26px;
   border:1px solid var(--border);
   box-shadow:var(--shadow);
 }
 .owner{
-  padding:22px;
-  display:flex;gap:24px;flex-wrap:wrap;
+  padding:30px;
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
 }
 .owner img{
-  width:240px;height:240px;
-  object-fit:cover;border-radius:20px;
+  width:260px;
+  height:260px;
+  object-fit:cover;
+  border-radius:22px;
   border:1px solid var(--border);
 }
-.owner > div{flex:1;min-width:240px}
+.owner > div{
+  flex:1;
+  min-width:260px;
+}
+.owner b{
+  font-size:20px;
+}
+.owner .meta{
+  margin-top:6px;
+  color:var(--muted);
+  font-weight:500;
+}
+.owner ul{
+  margin:18px 0 0;
+  padding-left:18px;
+}
+.owner li{
+  margin-bottom:8px;
+  color:#334155;
+}
 
-/* SERVICES */
-.section{padding:40px 0}
+/* ================= SERVICES ================= */
+.section{
+  padding:70px 0;
+}
+.section h2{
+  font-size:36px;
+  margin-bottom:10px;
+}
+.section p{
+  font-size:17px;
+  color:var(--muted);
+  max-width:70ch;
+}
 .grid{
+  margin-top:34px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:16px;
+  gap:22px;
 }
 @media(max-width:900px){.grid{grid-template-columns:1fr}}
 .service{
-  padding:18px;border-radius:18px;
+  padding:26px;
+  border-radius:22px;
   border:1px solid var(--border);
-  background:#fff;
+  background:var(--card);
   cursor:pointer;
-  transition:.2s;
+  transition:.25s;
 }
-.service:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
-.service svg{width:28px;height:28px;color:var(--accent)}
+.service:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 60px rgba(15,23,42,.12);
+}
+.service h3{
+  font-size:20px;
+  margin:0 0 6px;
+}
+.service p{
+  font-size:15px;
+  color:var(--muted);
+}
 
-/* MODAL */
+/* ================= MODAL ================= */
 .modal{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,.55);
-  display:none;align-items:center;justify-content:center;
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:50;
 }
 .modal.open{display:flex}
 .panel{
-  background:#fff;
-  width:min(960px,100%);
-  border-radius:22px;
+  background:var(--card);
+  width:min(980px,100%);
+  border-radius:28px;
   border:1px solid var(--border);
-  animation:fadeUp .3s ease;
+  box-shadow:0 40px 120px rgba(0,0,0,.4);
+  animation:fadeUp .35s ease;
 }
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
+  from{opacity:0;transform:translateY(30px)}
   to{opacity:1;transform:none}
 }
-.panel-body{padding:22px}
-.steps{
-  display:flex;gap:10px;margin-bottom:16px;
+.panel-body{
+  padding:34px;
 }
-.step{width:10px;height:10px;border-radius:50%;background:var(--border)}
+.steps{
+  display:flex;
+  gap:10px;
+  margin-bottom:26px;
+}
+.step{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--border);
+}
 .step.active{background:var(--accent)}
 
 .formgrid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:18px;
 }
-@media(max-width:700px){.formgrid{grid-template-columns:1fr}}
+@media(max-width:800px){.formgrid{grid-template-columns:1fr}}
 .field label{
-  display:block;font-size:12px;
-  color:var(--muted);font-weight:700;
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
 }
-.field input,.field select,.field textarea{
-  width:100%;padding:12px;
-  border-radius:12px;border:1px solid var(--border);
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  margin-top:6px;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  font-size:15px;
+}
+.field textarea{min-height:130px}
+.helper{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:6px;
 }
 .actions-row{
-  margin-top:16px;
-  display:flex;justify-content:space-between;gap:10px;
+  margin-top:30px;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
 }
+
+/* ================= FOOTER ================= */
 footer{
-  background:#0b1220;color:#fff;
-  padding:30px;text-align:center;
+  background:#0b1220;
+  color:#cbd5e1;
+  padding:36px;
+  text-align:center;
+  font-size:14px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:60px 0}
+  .hero h1{font-size:36px}
+  .brand img{height:120px}
+  .owner img{width:180px;height:180px}
 }
 </style>
 </head>
@@ -150,7 +281,7 @@ footer{
 
 <header>
   <div class="container nav">
-    <div class="brand"><img src="logo.PNG"></div>
+    <div class="brand"><img src="logo.PNG" alt="Tidy Builders"></div>
     <div class="actions">
       <a class="btn primary" href="sms:+18182774433">Text (818) 277-4433</a>
       <a class="btn" href="mailto:tidybuildersco@gmail.com">Email</a>
@@ -163,30 +294,62 @@ footer{
 <section class="hero">
   <div>
     <h1>Clean work. Clear communication. Done right.</h1>
-    <p>Electrical, plumbing, painting, carpentry, installations, and more.</p>
+    <p>
+      Tidy Builders provides reliable handyman and construction services across Los Angeles.
+      From small repairs to complex installations, every job is handled carefully, cleanly,
+      and with clear communication from start to finish.
+    </p>
     <div class="hero-cta">
-      <button class="btn primary" id="openQuote">Get a Quote</button>
+      <button class="btn primary" id="openQuote">Request a Quote</button>
     </div>
   </div>
 
   <div class="card owner">
-    <img src="bor1.png">
+    <img src="bor1.png" alt="Owner">
     <div>
-      <b>Owner-operated</b><br>
-      Serving Los Angeles, CA
+      <b>Owner-operated & detail-focused</b>
+      <div class="meta">Serving homes across Los Angeles, CA</div>
+      <ul>
+        <li>Electrical, plumbing, painting, carpentry, and EV chargers</li>
+        <li>Respect for your home and your time</li>
+        <li>Clear scope, no surprises</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="section">
   <h2>Services</h2>
+  <p>
+    Select a service below to begin a detailed quote. Each category includes
+    job-specific options so your request is clear and accurate.
+  </p>
+
   <div class="grid">
-    <div class="service" data-service="General">🛠 General Handyman</div>
-    <div class="service" data-service="Electrical">⚡ Electrical</div>
-    <div class="service" data-service="Plumbing">🚿 Plumbing</div>
-    <div class="service" data-service="Painting">🎨 Painting</div>
-    <div class="service" data-service="Carpentry">🪚 Carpentry</div>
-    <div class="service" data-service="EV Charger">🔌 EV Charger</div>
+    <div class="service" data-service="General">
+      <h3>General Handyman</h3>
+      <p>Multiple small tasks, fixes, and custom requests.</p>
+    </div>
+    <div class="service" data-service="Electrical">
+      <h3>Electrical</h3>
+      <p>Outlets, lighting, wiring, troubleshooting.</p>
+    </div>
+    <div class="service" data-service="Plumbing">
+      <h3>Plumbing</h3>
+      <p>Leaks, fixtures, drains, toilets.</p>
+    </div>
+    <div class="service" data-service="Painting">
+      <h3>Painting</h3>
+      <p>Interior, exterior, touch-ups, full repaints.</p>
+    </div>
+    <div class="service" data-service="Carpentry">
+      <h3>Carpentry</h3>
+      <p>Doors, trim, cabinets, custom woodwork.</p>
+    </div>
+    <div class="service" data-service="EV Charger">
+      <h3>EV Charger Installation</h3>
+      <p>Residential EV charger installs and upgrades.</p>
+    </div>
   </div>
 </section>
 
@@ -203,7 +366,6 @@ footer{
         <div class="step"></div>
       </div>
 
-      <!-- STEP 1 -->
       <div id="step1">
         <div class="formgrid">
           <div class="field">
@@ -215,7 +377,7 @@ footer{
             <select id="qType"></select>
           </div>
           <div class="field">
-            <label>Part of house</label>
+            <label>Part of the house</label>
             <select id="qRoom">
               <option>Kitchen</option>
               <option>Bathroom</option>
@@ -230,23 +392,24 @@ footer{
         </div>
       </div>
 
-      <!-- STEP 2 -->
       <div id="step2" style="display:none">
         <div class="field">
-          <label>Description</label>
+          <label>Describe the issue or project</label>
           <textarea id="qDetails"></textarea>
+          <div class="helper">
+            Include measurements, symptoms, materials, or anything helpful.
+          </div>
         </div>
       </div>
 
-      <!-- STEP 3 -->
       <div id="step3" style="display:none">
         <div class="formgrid">
           <div class="field">
-            <label>Name</label>
+            <label>Your name</label>
             <input id="qName">
           </div>
           <div class="field">
-            <label>Phone</label>
+            <label>Phone number</label>
             <input id="qPhone">
           </div>
           <div class="field">
@@ -260,8 +423,8 @@ footer{
         <button class="btn" id="back">Back</button>
         <div>
           <button class="btn primary" id="next">Next</button>
-          <button class="btn primary" id="sendEmail" style="display:none">Email</button>
-          <a class="btn" id="sendText" style="display:none">Text</a>
+          <button class="btn primary" id="sendEmail" style="display:none">Send Email</button>
+          <a class="btn" id="sendText" style="display:none">Send Text</a>
         </div>
       </div>
 
@@ -282,11 +445,11 @@ const qService=document.getElementById("qService");
 const qType=document.getElementById("qType");
 
 const jobTypes={
-  General:["Small repairs","Multiple tasks","Other"],
-  Electrical:["Outlet / switch","Lighting","Troubleshooting","Panel / wiring","Other"],
-  Plumbing:["Leak","Fixture install","Drain issue","Toilet / sink","Other"],
-  Painting:["Interior","Exterior","Touch-ups","Full repaint","Other"],
-  Carpentry:["Door","Trim","Cabinet","Custom work","Other"],
+  "General":["Small repair","Multiple tasks","Inspection","Other"],
+  "Electrical":["Outlet / switch","Lighting","Troubleshooting","Panel / wiring","Other"],
+  "Plumbing":["Leak","Fixture install","Drain issue","Toilet / sink","Other"],
+  "Painting":["Interior","Exterior","Touch-ups","Full repaint","Other"],
+  "Carpentry":["Door","Trim","Cabinet","Custom work","Other"],
   "EV Charger":["New install","Upgrade","Inspection","Other"]
 };
 
@@ -328,7 +491,7 @@ function showStep(n){
   });
   document.getElementById("next").style.display=n<2?"inline-block":"none";
   document.getElementById("sendEmail").style.display=n===2?"inline-block":"none";
-  document.getElementById("sendText").style.display=n===2?"inline-block":"none";
+  document.getElementById("sendText").style.display=n===2?"inline-block":"inline-block";
 }
 showStep(0);
 
@@ -341,11 +504,12 @@ document.getElementById("sendEmail").onclick=()=>{
 Job: ${qType.value}
 Room: ${qRoom.value}
 
+Details:
 ${qDetails.value}
 
-${qName.value}
-${qPhone.value}
-${qEmail.value}`;
+Name: ${qName.value}
+Phone: ${qPhone.value}
+Email: ${qEmail.value}`;
   location.href="mailto:tidybuildersco@gmail.com?subject=Quote Request&body="+encodeURIComponent(body);
 };
 
