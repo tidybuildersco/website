@@ -44,10 +44,15 @@ header{
 }
 .nav{
   display:flex;align-items:center;justify-content:space-between;gap:18px;
-  padding:18px 0;padding:12px 0;        /* smaller padding */
-  height:110px; 
+  padding:12px 0;
+  height:110px;
 }
-.brand img{height:150px}
+.brand{display:flex;align-items:center;height:100%}
+.brand img{
+  height:150px;          /* make logo feel bigger */
+  max-height:100%;       /* BUT keep header from growing */
+  object-fit:contain;
+}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
 .btn{
   display:inline-flex;align-items:center;gap:10px;
@@ -83,7 +88,7 @@ h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
 .hero p{margin:0 0 22px;color:var(--muted);font-size:18px;max-width:60ch}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 
-/* OWNER CARD (FIXED: FLEX, NO OVERLAP) */
+/* OWNER CARD */
 .card{
   background:#fff;border:1px solid var(--border);border-radius:22px;
   box-shadow:var(--shadow);
@@ -148,7 +153,7 @@ h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
 }
 .modal.open{display:flex}
 .panel{
-  width:min(880px,100%);
+  width:min(920px,100%);
   background:#fff;border-radius:22px;border:1px solid var(--border);
   box-shadow:0 40px 120px rgba(2,6,23,.35);overflow:hidden;
 }
@@ -161,8 +166,14 @@ h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
 .steps{display:flex;gap:10px;margin:0 0 14px;padding:0;list-style:none}
 .dot{width:10px;height:10px;border-radius:999px;background:var(--border)}
 .dot.on{background:var(--accent)}
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.formgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
 @media (max-width:760px){.formgrid{grid-template-columns:1fr}}
+
 .field label{display:block;font-size:12px;color:var(--muted);font-weight:800;margin-bottom:6px}
 .field input,.field textarea,.field select{
   width:100%;padding:12px;border-radius:14px;border:1px solid var(--border);
@@ -171,6 +182,27 @@ h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
 .field textarea{min-height:120px;resize:vertical}
 .actions-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px}
 .small{color:var(--muted);font-weight:600;font-size:12px}
+
+/* GOOGLE FORM SECTION */
+.gform{
+  padding:10px 0 70px;
+}
+.gform .box{
+  background:#fff;border:1px solid var(--border);border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.gform .head{
+  padding:18px 20px;border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
+}
+.gform .head h2{margin:0;font-size:26px}
+.gform .head p{margin:6px 0 0;color:var(--muted);font-weight:600}
+.gform iframe{
+  width:100%;
+  height:900px;
+  border:0;
+}
 
 /* FOOTER */
 footer{
@@ -182,12 +214,13 @@ footer a{color:#fff;font-weight:800}
 /* MOBILE */
 @media (max-width:900px){
   .container{padding:0 16px}
-  .brand img{height:70px}
+  .brand img{height:120px}
   h1{font-size:34px}
   .hero{grid-template-columns:1fr;padding:46px 0 26px}
   .btn{padding:8px 10px;font-size:13px}
   .pill{padding:8px 10px;font-size:13px}
-  .owner img{width:150px;height:150px}
+  .owner img{width:170px;height:170px}
+  .nav{height:96px}
 }
 </style>
 </head>
@@ -217,6 +250,7 @@ footer a{color:#fff;font-weight:800}
     <div class="hero-cta">
       <button class="btn primary" id="openQuote">Get a Quote</button>
       <a class="btn soft" href="sms:+18182774433">Text Photos</a>
+      <a class="btn" href="#quote-form">Full Quote Form</a>
     </div>
   </div>
 
@@ -246,28 +280,47 @@ footer a{color:#fff;font-weight:800}
     <div class="service" data-service="Painting">Painting</div>
     <div class="service" data-service="Carpentry">Carpentry</div>
     <div class="service" data-service="Mounting">Mounting & Installations</div>
-    <div class="service" data-service="EV Charger">EV Charger Installation</div>
+    <div class="service" data-service="EV Charger Installation">EV Charger Installation</div>
+  </div>
+</section>
+
+<!-- GOOGLE FORM EMBED (FREE, SAVES RESPONSES) -->
+<section class="gform" id="quote-form">
+  <div class="box">
+    <div class="head">
+      <h2>Full Quote Form</h2>
+      <p>This saves your request and sends it to us via Google Forms.</p>
+    </div>
+
+    <!-- IMPORTANT: Replace the iframe src with YOUR Google Form embed URL -->
+    <iframe
+      title="Tidy Builders Quote Form"
+      src="PASTE_YOUR_GOOGLE_FORM_EMBED_LINK_HERE">
+    </iframe>
   </div>
 </section>
 
 </main>
 
-<div class="modal" id="modal">
+<!-- QUICK QUOTE MODAL (EMAIL + TEXT) -->
+<div class="modal" id="modal" aria-hidden="true">
   <div class="panel">
     <div class="panel-head">
       <div>
         <strong id="qTitle">Get a Quote</strong><br>
-        <span class="small">Tell us what you need</span>
+        <span class="small">Fill this quick form, then email or text it.</span>
       </div>
-      <button class="btn" id="close">Close</button>
+      <button class="btn" id="close" type="button">Close</button>
     </div>
+
     <div class="panel-body">
-      <ul class="steps">
+      <ul class="steps" aria-hidden="true">
         <li class="dot on" id="d1"></li>
         <li class="dot" id="d2"></li>
         <li class="dot" id="d3"></li>
       </ul>
 
+      <!-- STEP 1 -->
       <div id="qs1">
         <div class="formgrid">
           <div class="field">
@@ -275,62 +328,104 @@ footer a{color:#fff;font-weight:800}
             <input id="qService" disabled>
           </div>
           <div class="field">
-            <label>Details</label>
+            <label>Job type</label>
             <select id="qSub">
               <option value="">Choose…</option>
               <option>Install</option>
               <option>Repair</option>
               <option>Replace</option>
+              <option>Inspect / Diagnose</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Part of the house</label>
+            <select id="qRoom">
+              <option value="">Choose…</option>
+              <option>Kitchen</option>
+              <option>Bathroom</option>
+              <option>Living room</option>
+              <option>Bedroom</option>
+              <option>Garage</option>
+              <option>Basement</option>
+              <option>Yard / Exterior</option>
+              <option>Other</option>
             </select>
           </div>
         </div>
+
         <div class="actions-row">
-          <span class="small">Select to continue</span>
-          <button class="btn primary" id="next1" disabled>Next</button>
+          <span class="small">Next unlocks after selecting job type + part of house.</span>
+          <button class="btn primary" id="next1" type="button" disabled>Next</button>
         </div>
       </div>
 
+      <!-- STEP 2 -->
       <div id="qs2" style="display:none">
         <div class="formgrid">
           <div class="field">
             <label>Address / Area</label>
-            <input id="qArea">
+            <input id="qArea" placeholder="Example: Sherman Oaks / 90025">
           </div>
           <div class="field">
             <label>Preferred time</label>
-            <input id="qTime">
+            <input id="qTime" placeholder="Example: This week, afternoons">
+          </div>
+          <div class="field">
+            <label>How urgent?</label>
+            <select id="qUrgency">
+              <option value="">Choose…</option>
+              <option>Emergency (ASAP)</option>
+              <option>Within 24–48 hours</option>
+              <option>Within a week</option>
+              <option>Flexible</option>
+            </select>
           </div>
         </div>
+
         <div class="formgrid" style="margin-top:12px">
-          <div class="field">
+          <div class="field" style="grid-column:span 2">
             <label>Description</label>
-            <textarea id="qDetails"></textarea>
+            <textarea id="qDetails" placeholder="What’s happening? What do you want installed/fixed?"></textarea>
           </div>
           <div class="field">
             <label>Photo links (optional)</label>
-            <textarea id="qPhotos"></textarea>
+            <textarea id="qPhotos" placeholder="Paste links, or write: 'Will text photos'"></textarea>
           </div>
         </div>
+
         <div class="actions-row">
-          <button class="btn soft" id="back2">Back</button>
-          <button class="btn primary" id="next2">Next</button>
+          <button class="btn soft" id="back2" type="button">Back</button>
+          <button class="btn primary" id="next2" type="button">Next</button>
         </div>
       </div>
 
+      <!-- STEP 3 -->
       <div id="qs3" style="display:none">
         <div class="formgrid">
           <div class="field">
-            <label>Name</label>
-            <input id="qName">
+            <label>Your name</label>
+            <input id="qName" placeholder="Full name">
           </div>
           <div class="field">
-            <label>Phone</label>
-            <input id="qPhone">
+            <label>Your phone</label>
+            <input id="qPhone" placeholder="(###) ###-####">
+          </div>
+          <div class="field">
+            <label>Your email (optional)</label>
+            <input id="qEmail" placeholder="name@email.com">
           </div>
         </div>
+
         <div class="actions-row">
-          <button class="btn soft" id="back3">Back</button>
-          <a class="btn primary" id="send">Email Request</a>
+          <button class="btn soft" id="back3" type="button">Back</button>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn primary" id="sendEmail" type="button">Email</button>
+            <a class="btn soft" id="sendText" href="sms:+18182774433">Text</a>
+          </div>
+        </div>
+
+        <div class="small" style="margin-top:10px">
+          This quick form opens your email/text app (no backend). Use the Full Quote Form to save submissions automatically.
         </div>
       </div>
 
@@ -347,36 +442,114 @@ footer a{color:#fff;font-weight:800}
 </footer>
 
 <script>
-document.getElementById("y").textContent=new Date().getFullYear();
+document.getElementById("y").textContent = new Date().getFullYear();
 
-const modal=document.getElementById("modal");
-const openQuote=document.getElementById("openQuote");
-const closeBtn=document.getElementById("close");
-const qTitle=document.getElementById("qTitle");
-const qService=document.getElementById("qService");
-const qSub=document.getElementById("qSub");
-const next1=document.getElementById("next1");
-const qs1=document.getElementById("qs1");
-const qs2=document.getElementById("qs2");
-const qs3=document.getElementById("qs3");
+const modal = document.getElementById("modal");
+const openQuote = document.getElementById("openQuote");
+const closeBtn = document.getElementById("close");
 
-openQuote.onclick=()=>{qTitle.textContent="Get a Quote";modal.classList.add("open");}
-closeBtn.onclick=()=>modal.classList.remove("open");
-document.querySelectorAll(".service").forEach(s=>{
-  s.onclick=()=>{
-    qService.value=s.dataset.service;
-    modal.classList.add("open");
-  };
+const qService = document.getElementById("qService");
+const qSub = document.getElementById("qSub");
+const qRoom = document.getElementById("qRoom");
+const qUrgency = document.getElementById("qUrgency");
+
+const qArea = document.getElementById("qArea");
+const qTime = document.getElementById("qTime");
+const qDetails = document.getElementById("qDetails");
+const qPhotos = document.getElementById("qPhotos");
+
+const qName = document.getElementById("qName");
+const qPhone = document.getElementById("qPhone");
+const qEmail = document.getElementById("qEmail");
+
+const next1 = document.getElementById("next1");
+const next2 = document.getElementById("next2");
+const back2 = document.getElementById("back2");
+const back3 = document.getElementById("back3");
+
+const qs1 = document.getElementById("qs1");
+const qs2 = document.getElementById("qs2");
+const qs3 = document.getElementById("qs3");
+
+function showStep(n){
+  qs1.style.display = (n===1) ? "block" : "none";
+  qs2.style.display = (n===2) ? "block" : "none";
+  qs3.style.display = (n===3) ? "block" : "none";
+}
+
+function openModal(service){
+  qService.value = service || "General Request";
+  modal.classList.add("open");
+  showStep(1);
+  next1.disabled = true;
+  qSub.value = "";
+  qRoom.value = "";
+}
+
+function closeModal(){
+  modal.classList.remove("open");
+}
+
+openQuote.addEventListener("click", () => openModal("General Request"));
+closeBtn.addEventListener("click", closeModal);
+modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+document.querySelectorAll(".service").forEach(s => {
+  s.addEventListener("click", () => openModal(s.dataset.service));
 });
-qSub.onchange=()=>next1.disabled=!qSub.value;
-next1.onclick=()=>{qs1.style.display="none";qs2.style.display="block";}
-document.getElementById("back2").onclick=()=>{qs2.style.display="none";qs1.style.display="block";}
-document.getElementById("next2").onclick=()=>{qs2.style.display="none";qs3.style.display="block";}
-document.getElementById("back3").onclick=()=>{qs3.style.display="none";qs2.style.display="block";}
-document.getElementById("send").onclick=()=>{
-  const body=`Service: ${qService.value}\nDetails: ${qSub.value}\nArea: ${qArea.value}\nTime: ${qTime.value}\nNotes: ${qDetails.value}\nPhotos: ${qPhotos.value}\nName: ${qName.value}\nPhone: ${qPhone.value}`;
-  document.getElementById("send").href="mailto:tidybuildersco@gmail.com?subject=Quote Request&body="+encodeURIComponent(body);
-};
+
+function updateNext1(){
+  next1.disabled = !(qSub.value && qRoom.value);
+}
+qSub.addEventListener("change", updateNext1);
+qRoom.addEventListener("change", updateNext1);
+
+next1.addEventListener("click", () => showStep(2));
+back2.addEventListener("click", () => showStep(1));
+next2.addEventListener("click", () => showStep(3));
+back3.addEventListener("click", () => showStep(2));
+
+function buildSummary(){
+  return (
+`Service: ${qService.value || "-"}
+Job type: ${qSub.value || "-"}
+Part of house: ${qRoom.value || "-"}
+Urgency: ${qUrgency.value || "-"}
+
+Area: ${qArea.value || "-"}
+Preferred time: ${qTime.value || "-"}
+
+Description:
+${qDetails.value || "-"}
+
+Photo links:
+${qPhotos.value || "-"}
+
+Customer:
+Name: ${qName.value || "-"}
+Phone: ${qPhone.value || "-"}
+Email: ${qEmail.value || "-"}
+`);
+}
+
+function updateTextLink(){
+  const sms = `sms:+18182774433?&body=${encodeURIComponent(buildSummary())}`;
+  document.getElementById("sendText").setAttribute("href", sms);
+}
+
+["input","change"].forEach(evt=>{
+  [qSub,qRoom,qUrgency,qArea,qTime,qDetails,qPhotos,qName,qPhone,qEmail].forEach(el=>{
+    el.addEventListener(evt, updateTextLink);
+  });
+});
+updateTextLink();
+
+document.getElementById("sendEmail").addEventListener("click", () => {
+  const subject = encodeURIComponent(`Quote Request — ${qService.value || "Tidy Builders"}`);
+  const body = encodeURIComponent(buildSummary());
+  window.location.href = `mailto:tidybuildersco@gmail.com?subject=${subject}&body=${body}`;
+});
 </script>
 
 </body>
