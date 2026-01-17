@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Tidy Builders | Handyman & Construction Services in Los Angeles</title>
-<meta name="description" content="Tidy Builders provides reliable handyman, electrical, plumbing, painting, carpentry, and EV charger services across Los Angeles." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +18,7 @@
   --muted:#475569;
   --border:#e2e8f0;
   --accent:#2563eb;
-  --shadow:0 24px 60px rgba(15,23,42,.12);
+  --shadow:0 28px 70px rgba(15,23,42,.15);
 }
 *{box-sizing:border-box}
 body{
@@ -27,10 +26,9 @@ body{
   font-family:Inter,system-ui,sans-serif;
   background:var(--bg);
   color:var(--ink);
-  line-height:1.6;
 }
-a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:auto;padding:0 28px}
+a{text-decoration:none;color:inherit}
 
 /* HEADER */
 header{
@@ -41,7 +39,10 @@ header{
   display:flex;align-items:center;justify-content:space-between;
   height:110px;
 }
-.brand img{height:140px;max-height:100%;object-fit:contain}
+.brand img{
+  height:140px;
+  max-height:100%;
+}
 .actions{display:flex;gap:12px}
 .btn{
   padding:14px 18px;
@@ -49,33 +50,23 @@ header{
   border:1px solid var(--border);
   background:#fff;
   font-weight:700;
-  font-size:15px;
 }
 .btn.primary{background:var(--accent);color:#fff;border:none}
 
 /* HERO */
 .hero{
-  padding:80px 0 50px;
+  padding:80px 0 60px;
   display:grid;
   grid-template-columns:1.1fr .9fr;
   gap:40px;
 }
-.hero h1{
-  font-size:48px;
-  line-height:1.1;
-  margin:0 0 16px;
-}
-.hero p{
-  font-size:18px;
-  color:var(--muted);
-  max-width:60ch;
-}
-.hero-cta{margin-top:24px}
+.hero h1{font-size:48px;margin-bottom:14px}
+.hero p{font-size:18px;color:var(--muted)}
 
-/* OWNER CARD */
+/* CARD */
 .card{
   background:var(--card);
-  border-radius:24px;
+  border-radius:26px;
   border:1px solid var(--border);
   box-shadow:var(--shadow);
 }
@@ -86,40 +77,21 @@ header{
   flex-wrap:wrap;
 }
 .owner img{
-  width:240px;
-  height:240px;
+  width:220px;
+  aspect-ratio:1/1;
   object-fit:cover;
   border-radius:20px;
   border:1px solid var(--border);
 }
-.owner > div{
-  flex:1;
-  min-width:240px;
-}
 .owner b{font-size:22px}
-.owner .meta{
-  margin-top:6px;
-  color:var(--muted);
-  font-size:15px;
-}
 
 /* SERVICES */
 .section{padding:60px 0}
-.section h2{
-  font-size:34px;
-  margin-bottom:10px;
-}
-.section p{
-  font-size:17px;
-  color:var(--muted);
-}
 .grid{
-  margin-top:28px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
 .service{
   padding:22px;
   border-radius:20px;
@@ -127,44 +99,39 @@ header{
   background:#fff;
   cursor:pointer;
 }
-.service h3{
-  margin:0 0 6px;
-  font-size:18px;
+
+/* EXTRA TRUST SECTION */
+.trust{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
-.service p{
-  margin:0;
-  font-size:15px;
-  color:var(--muted);
+.trust div{
+  background:#fff;
+  padding:22px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  font-weight:600;
 }
 
 /* MODAL */
 .modal{
-  position:fixed;
-  inset:0;
-  background:rgba(15,23,42,.55);
-  display:none;
-  align-items:center;
-  justify-content:center;
+  position:fixed;inset:0;
+  background:rgba(15,23,42,.6);
+  display:none;align-items:center;justify-content:center;
 }
 .modal.open{display:flex}
 .panel{
   background:#fff;
-  width:min(950px,100%);
+  width:min(900px,100%);
   border-radius:26px;
   border:1px solid var(--border);
-  box-shadow:0 40px 100px rgba(0,0,0,.4);
 }
-.panel-body{padding:32px}
+.panel-body{padding:30px}
 
-.steps{
-  display:flex;
-  gap:10px;
-  margin-bottom:22px;
-}
+.steps{display:flex;gap:10px;margin-bottom:20px}
 .step{
-  width:12px;
-  height:12px;
-  border-radius:50%;
+  width:12px;height:12px;border-radius:50%;
   background:var(--border);
 }
 .step.active{background:var(--accent)}
@@ -174,7 +141,6 @@ header{
   grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
-@media(max-width:800px){.formgrid{grid-template-columns:1fr}}
 .field label{
   font-size:13px;
   font-weight:700;
@@ -186,33 +152,33 @@ header{
   padding:14px;
   border-radius:14px;
   border:1px solid var(--border);
-  font-size:15px;
 }
-.field textarea{min-height:120px}
 
 .actions-row{
-  margin-top:26px;
+  margin-top:24px;
   display:flex;
   justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
 }
 
-/* FOOTER */
-footer{
-  background:#0b1220;
-  color:#cbd5e1;
-  padding:36px;
-  text-align:center;
-  font-size:14px;
+.choice-boxes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
 }
+.choice{
+  padding:22px;
+  border-radius:20px;
+  text-align:center;
+  font-weight:800;
+  cursor:pointer;
+}
+.choice.email{background:#2563eb;color:#fff}
+.choice.text{background:#16a34a;color:#fff}
 
 /* MOBILE */
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding:60px 0}
-  .hero h1{font-size:34px}
-  .brand img{height:120px}
-  .owner img{width:180px;height:180px}
+  .hero{grid-template-columns:1fr}
+  .grid,.trust{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -221,7 +187,7 @@ footer{
 
 <header>
   <div class="container nav">
-    <div class="brand"><img src="logo.PNG" alt="Tidy Builders"></div>
+    <div class="brand"><img src="logo.PNG"></div>
     <div class="actions">
       <a class="btn primary" href="sms:+18182774433">Text (818) 277-4433</a>
       <a class="btn" href="mailto:tidybuildersco@gmail.com">Email</a>
@@ -234,57 +200,39 @@ footer{
 <section class="hero">
   <div>
     <h1>One call. Everything handled.</h1>
-    <p>
-      Electrical, plumbing, painting, carpentry, installations, and more —
-      one reliable professional so you don’t need to call anyone else.
-    </p>
-    <div class="hero-cta">
-      <button class="btn primary" id="openQuote">Request a Quote</button>
-    </div>
+    <p>Electrical, plumbing, painting, carpentry, installations, and more.</p>
+    <button class="btn primary" id="openQuote">Request a Quote</button>
   </div>
 
   <div class="card owner">
-    <img src="borh.PNG" alt="Borhan Kheiri">
+    <img src="borh.PNG">
     <div>
-      <b>Borhan Kheiri</b>
-      <div class="meta">Owner · Tidy Builders · Los Angeles</div>
-      <p style="margin-top:12px;font-size:16px;color:#334155;max-width:55ch">
-        I handle every job personally and take care of anything your home needs —
-        so you don’t have to hire multiple people.
-      </p>
+      <b>Borhan Kheiri</b><br>
+      Owner · Tidy Builders<br><br>
+      I take care of anything your home needs — so you don’t need anyone else.
     </div>
   </div>
 </section>
 
 <section class="section">
   <h2>Services</h2>
-  <p>Click a service to start a quick, detailed quote.</p>
-
   <div class="grid">
-    <div class="service" data-service="General">
-      <h3>General Handyman</h3>
-      <p>Multiple small jobs or custom requests.</p>
-    </div>
-    <div class="service" data-service="Electrical">
-      <h3>Electrical</h3>
-      <p>Outlets, lighting, wiring, troubleshooting.</p>
-    </div>
-    <div class="service" data-service="Plumbing">
-      <h3>Plumbing</h3>
-      <p>Leaks, fixtures, drains, toilets.</p>
-    </div>
-    <div class="service" data-service="Painting">
-      <h3>Painting</h3>
-      <p>Interior, exterior, touch-ups.</p>
-    </div>
-    <div class="service" data-service="Carpentry">
-      <h3>Carpentry</h3>
-      <p>Doors, trim, cabinets, custom work.</p>
-    </div>
-    <div class="service" data-service="EV Charger">
-      <h3>EV Charger</h3>
-      <p>Residential installation and upgrades.</p>
-    </div>
+    <div class="service" data-service="General">General Handyman</div>
+    <div class="service" data-service="Electrical">Electrical</div>
+    <div class="service" data-service="Plumbing">Plumbing</div>
+    <div class="service" data-service="Painting">Painting</div>
+    <div class="service" data-service="Carpentry">Carpentry</div>
+    <div class="service" data-service="EV Charger">EV Charger</div>
+  </div>
+</section>
+
+<!-- EXTRA SECTION AT END -->
+<section class="section">
+  <h2>Why Clients Choose Tidy Builders</h2>
+  <div class="trust">
+    <div>One trusted professional</div>
+    <div>Clean, careful work</div>
+    <div>Clear communication</div>
   </div>
 </section>
 
@@ -301,158 +249,67 @@ footer{
         <div class="step"></div>
       </div>
 
-      <div id="step1">
+      <div id="s1">
         <div class="formgrid">
-          <div class="field">
-            <label>Service</label>
-            <select id="qService"></select>
-          </div>
-          <div class="field">
-            <label>Job type</label>
-            <select id="qType"></select>
-          </div>
-          <div class="field">
-            <label>Part of the house</label>
-            <select id="qRoom">
-              <option>Kitchen</option>
-              <option>Bathroom</option>
-              <option>Living room</option>
-              <option>Bedroom</option>
-              <option>Garage</option>
-              <option>Basement</option>
-              <option>Exterior</option>
-              <option>Other</option>
-            </select>
-          </div>
+          <div class="field"><label>Service</label><select id="qService"></select></div>
+          <div class="field"><label>Job Type</label><input id="qType"></div>
+          <div class="field"><label>Room</label><input id="qRoom"></div>
         </div>
       </div>
 
-      <div id="step2" style="display:none">
+      <div id="s2" style="display:none">
         <div class="field">
           <label>Description</label>
-          <textarea id="qDetails" placeholder="Briefly describe what you need"></textarea>
+          <textarea id="qDetails"></textarea>
         </div>
       </div>
 
-      <div id="step3" style="display:none">
-        <div class="formgrid">
-          <div class="field">
-            <label>Your name</label>
-            <input id="qName">
-          </div>
-          <div class="field">
-            <label>Phone</label>
-            <input id="qPhone">
-          </div>
-          <div class="field">
-            <label>Email (optional)</label>
-            <input id="qEmail">
-          </div>
+      <div id="s3" style="display:none">
+        <div class="choice-boxes">
+          <div class="choice email" id="emailBox">Email Quote</div>
+          <div class="choice text" id="textBox">Text Quote</div>
         </div>
       </div>
 
       <div class="actions-row">
         <button class="btn" id="back">Back</button>
-        <div>
-          <button class="btn primary" id="next">Next</button>
-          <button class="btn primary" id="sendEmail" style="display:none">Email</button>
-          <a class="btn" id="sendText" style="display:none">Text</a>
-        </div>
+        <button class="btn primary" id="next">Next</button>
       </div>
 
     </div>
   </div>
 </div>
 
-<footer>
-© Tidy Builders · Los Angeles · (818) 277-4433
-</footer>
-
 <script>
 const modal=document.getElementById("modal");
-const steps=[...document.querySelectorAll(".step")];
-let current=0;
+const steps=document.querySelectorAll(".step");
+let step=0;
 
+const services=["General","Electrical","Plumbing","Painting","Carpentry","EV Charger"];
 const qService=document.getElementById("qService");
-const qType=document.getElementById("qType");
+services.forEach(s=>{let o=document.createElement("option");o.textContent=s;qService.appendChild(o);});
 
-const jobTypes={
-  "General":["Small repair","Multiple tasks","Inspection","Other"],
-  "Electrical":["Outlet / switch","Lighting","Troubleshooting","Wiring","Other"],
-  "Plumbing":["Leak","Fixture install","Drain issue","Toilet / sink","Other"],
-  "Painting":["Interior","Exterior","Touch-ups","Full repaint","Other"],
-  "Carpentry":["Door","Trim","Cabinet","Custom work","Other"],
-  "EV Charger":["New install","Upgrade","Inspection","Other"]
-};
-
-function setService(s){
-  qService.innerHTML="";
-  Object.keys(jobTypes).forEach(k=>{
-    const o=document.createElement("option");
-    o.textContent=k;
-    qService.appendChild(o);
-  });
-  qService.value=s||"General";
-  updateTypes();
-}
-function updateTypes(){
-  qType.innerHTML="";
-  jobTypes[qService.value].forEach(t=>{
-    const o=document.createElement("option");
-    o.textContent=t;
-    qType.appendChild(o);
-  });
-}
-qService.onchange=updateTypes;
-
-document.getElementById("openQuote").onclick=()=>{
-  setService();
-  modal.classList.add("open");
-};
-document.querySelectorAll(".service").forEach(s=>{
-  s.onclick=()=>{
-    setService(s.dataset.service);
-    modal.classList.add("open");
-  };
-});
-
-function showStep(n){
-  ["step1","step2","step3"].forEach((id,i)=>{
+function show(n){
+  ["s1","s2","s3"].forEach((id,i)=>{
     document.getElementById(id).style.display=i===n?"block":"none";
     steps[i].classList.toggle("active",i===n);
   });
   document.getElementById("next").style.display=n<2?"inline-block":"none";
-  document.getElementById("sendEmail").style.display=n===2?"inline-block":"none";
-  document.getElementById("sendText").style.display=n===2?"inline-block":"inline-block";
 }
-showStep(0);
+show(0);
 
-document.getElementById("next").onclick=()=>{if(current<2){current++;showStep(current);}};
-document.getElementById("back").onclick=()=>{if(current>0){current--;showStep(current);}};
+document.getElementById("openQuote").onclick=()=>modal.classList.add("open");
+document.querySelectorAll(".service").forEach(s=>{
+  s.onclick=()=>{qService.value=s.dataset.service;modal.classList.add("open");};
+});
+document.getElementById("next").onclick=()=>{if(step<2){step++;show(step);}};
+document.getElementById("back").onclick=()=>{if(step>0){step--;show(step);}};
 
-document.getElementById("sendEmail").onclick=()=>{
-  const body=
-`Service: ${qService.value}
-Job: ${qType.value}
-Room: ${qRoom.value}
-
-Details:
-${qDetails.value}
-
-Name: ${qName.value}
-Phone: ${qPhone.value}
-Email: ${qEmail.value}`;
-  location.href="mailto:tidybuildersco@gmail.com?subject=Quote Request&body="+encodeURIComponent(body);
+document.getElementById("emailBox").onclick=()=>{
+  location.href="mailto:tidybuildersco@gmail.com?subject=Quote Request";
 };
-
-document.getElementById("sendText").onclick=()=>{
-  const body=
-`Service: ${qService.value}
-Job: ${qType.value}
-Room: ${qRoom.value}
-${qDetails.value}
-${qName.value} ${qPhone.value}`;
-  location.href="sms:+18182774433?&body="+encodeURIComponent(body);
+document.getElementById("textBox").onclick=()=>{
+  location.href="sms:+18182774433";
 };
 </script>
 
