@@ -6,201 +6,127 @@
 
 <title>Tidy Builders | Handyman & Construction Services in Los Angeles</title>
 <meta name="description" content="Professional handyman, electrical, plumbing, painting, carpentry, mounting, installations, and EV charger installation services in Los Angeles." />
-<link rel="canonical" href="https://www.tidybuilders.com/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#f5f7fb;
-  --white:#ffffff;
+  --white:#fff;
   --ink:#0f172a;
   --muted:#64748b;
   --border:#e5e7eb;
-  --shadow:0 28px 70px rgba(2,6,23,.12);
   --accent:#2563eb;
   --soft:#eef3ff;
+  --shadow:0 28px 70px rgba(2,6,23,.12);
 }
-
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:radial-gradient(900px 480px at 15% 0%, #eaf1ff 0%, var(--bg) 55%);
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
   color:var(--ink);
-  line-height:1.55;
 }
-a{color:inherit;text-decoration:none}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:auto;padding:0 24px}
 
 /* HEADER */
 header{
-  position:sticky;top:0;z-index:20;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:saturate(140%) blur(10px);
-  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:10;
+  background:#fff;border-bottom:1px solid var(--border);
 }
 .nav{
-  display:flex;align-items:center;justify-content:space-between;gap:18px;
-  padding:12px 0;
-  height:110px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:100px;
 }
-.brand{display:flex;align-items:center;height:100%}
-.brand img{
-  height:150px;          /* make logo feel bigger */
-  max-height:100%;       /* BUT keep header from growing */
-  object-fit:contain;
-}
-.actions{display:flex;gap:10px;flex-wrap:wrap}
+.brand img{height:140px;max-height:100%;object-fit:contain}
+.actions{display:flex;gap:10px}
 .btn{
-  display:inline-flex;align-items:center;gap:10px;
   padding:10px 14px;border-radius:12px;
   border:1px solid var(--border);
-  background:#fff;
-  font-weight:800;
+  background:#fff;font-weight:700;
 }
-.btn.primary{background:var(--accent);color:#fff;border-color:transparent}
-.btn.soft{background:var(--soft);color:#0b3aa8;border-color:#dbe7ff}
-.pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:10px 14px;border-radius:999px;
-  border:1px solid var(--border);
-  background:#fff;
-  font-weight:800;
-}
-.pill span{color:var(--muted);font-weight:600}
+.btn.primary{background:var(--accent);color:#fff;border:none}
 
 /* HERO */
 .hero{
-  padding:70px 0 40px;
-  display:grid;grid-template-columns:1.12fr .88fr;gap:34px;
-  align-items:center;
+  padding:70px 0;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:32px;
 }
-.kicker{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:8px 12px;border-radius:999px;
-  background:var(--soft);border:1px solid #dbe7ff;
-  color:#0b3aa8;font-weight:800;font-size:13px;
-}
-h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
-.hero p{margin:0 0 22px;color:var(--muted);font-size:18px;max-width:60ch}
+.hero h1{font-size:48px;margin:10px 0}
+.hero p{color:var(--muted);font-size:18px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 
-/* OWNER CARD */
+/* OWNER */
 .card{
-  background:#fff;border:1px solid var(--border);border-radius:22px;
+  background:#fff;border-radius:22px;
+  border:1px solid var(--border);
   box-shadow:var(--shadow);
 }
 .owner{
   padding:22px;
-  display:flex;
-  gap:22px;
-  align-items:flex-start;
-  flex-wrap:wrap;
+  display:flex;gap:24px;flex-wrap:wrap;
 }
 .owner img{
-  width:250px;
-  height:250px;
-  object-fit:cover;
-  border-radius:22px;
+  width:240px;height:240px;
+  object-fit:cover;border-radius:20px;
   border:1px solid var(--border);
 }
-.owner > div{
-  flex:1;
-  min-width:240px;
-}
-.owner .name{font-weight:900;font-size:18px}
-.owner .meta{color:var(--muted);font-weight:600;margin-top:4px}
-.trust{
-  margin-top:14px;padding:16px 18px;border-radius:18px;
-  background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
-  border:1px solid var(--border);
-  display:grid;gap:8px;
-}
-.trust b{font-weight:900}
-.trust span{color:var(--muted);font-weight:600;font-size:14px}
+.owner > div{flex:1;min-width:240px}
 
 /* SERVICES */
-.section{padding:30px 0 70px}
-.section-title{
-  display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  margin:16px 0;
-}
-.section-title h2{margin:0;font-size:34px;letter-spacing:-.7px}
-.section-title p{margin:0;color:var(--muted);font-weight:600}
+.section{padding:40px 0}
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:14px;
+  gap:16px;
 }
-@media (max-width:980px){.grid{grid-template-columns:1fr}}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
 .service{
-  padding:18px;border-radius:20px;border:1px solid var(--border);
-  background:linear-gradient(180deg,#ffffff 0%,#f9fbff 100%);
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-  cursor:pointer;
+  padding:18px;border-radius:18px;
+  border:1px solid var(--border);
+  background:#fff;cursor:pointer;
 }
-.service:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(2,6,23,.08);border-color:#cbd5e1}
-.service h3{margin:0;font-size:18px}
-.service p{margin:6px 0 0;color:var(--muted);font-weight:600;font-size:14px}
 
-/* MODAL (QUOTE) */
+/* MODAL */
 .modal{
-  position:fixed;inset:0;background:rgba(2,6,23,.55);
-  display:none;align-items:center;justify-content:center;padding:18px;z-index:50;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.5);
+  display:none;align-items:center;justify-content:center;
 }
 .modal.open{display:flex}
 .panel{
-  width:min(920px,100%);
-  background:#fff;border-radius:22px;border:1px solid var(--border);
-  box-shadow:0 40px 120px rgba(2,6,23,.35);overflow:hidden;
+  background:#fff;
+  width:min(900px,100%);
+  border-radius:22px;
+  border:1px solid var(--border);
 }
-.panel-head{
-  padding:18px 20px;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%);
-}
-.panel-body{padding:18px 20px}
-.steps{display:flex;gap:10px;margin:0 0 14px;padding:0;list-style:none}
-.dot{width:10px;height:10px;border-radius:999px;background:var(--border)}
-.dot.on{background:var(--accent)}
-
+.panel-body{padding:22px}
 .formgrid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
 }
-@media (max-width:760px){.formgrid{grid-template-columns:1fr}}
-
-.field label{display:block;font-size:12px;color:var(--muted);font-weight:800;margin-bottom:6px}
-.field input,.field textarea,.field select{
-  width:100%;padding:12px;border-radius:14px;border:1px solid var(--border);
-  font-family:inherit;font-size:15px;
+@media(max-width:700px){.formgrid{grid-template-columns:1fr}}
+.field label{
+  display:block;font-size:12px;
+  color:var(--muted);font-weight:700;
 }
-.field textarea{min-height:120px;resize:vertical}
-.actions-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px}
-.small{color:var(--muted);font-weight:600;font-size:12px}
-
-
-/* FOOTER */
+.field input,.field select,.field textarea{
+  width:100%;padding:12px;
+  border-radius:12px;border:1px solid var(--border);
+}
+.actions-row{
+  margin-top:16px;
+  display:flex;justify-content:space-between;gap:10px;
+}
 footer{
-  background:#0b1220;color:#cbd5e1;
-  padding:34px 0;margin-top:30px;
-}
-footer a{color:#fff;font-weight:800}
-
-/* MOBILE */
-@media (max-width:900px){
-  .container{padding:0 16px}
-  .brand img{height:120px}
-  h1{font-size:34px}
-  .hero{grid-template-columns:1fr;padding:46px 0 26px}
-  .btn{padding:8px 10px;font-size:13px}
-  .pill{padding:8px 10px;font-size:13px}
-  .owner img{width:170px;height:170px}
-  .nav{height:96px}
+  background:#0b1220;color:#fff;
+  padding:30px;text-align:center;
 }
 </style>
 </head>
@@ -208,17 +134,11 @@ footer a{color:#fff;font-weight:800}
 <body>
 
 <header>
-  <div class="container">
-    <div class="nav">
-      <div class="brand"><img src="logo.PNG" alt="Tidy Builders"></div>
-      <div class="actions">
-      <a class="btn primary" href="sms:+18182774433">
-        Text (818) 277-4433
-      </a>
-      <a class="btn soft" href="mailto:tidybuildersco@gmail.com">
-    Email
-  </a>
-</div>
+  <div class="container nav">
+    <div class="brand"><img src="logo.PNG"></div>
+    <div class="actions">
+      <a class="btn primary" href="sms:+18182774433">Text (818) 277-4433</a>
+      <a class="btn" href="mailto:tidybuildersco@gmail.com">Email</a>
     </div>
   </div>
 </header>
@@ -227,172 +147,94 @@ footer a{color:#fff;font-weight:800}
 
 <section class="hero">
   <div>
-    <div class="kicker">Los Angeles • Handyman + Construction</div>
     <h1>Clean work. Clear communication. Done right.</h1>
-    <p>Electrical, plumbing, painting, carpentry, mounting, installations, and EV chargers.</p>
+    <p>Electrical, plumbing, painting, carpentry, installations, and more.</p>
     <div class="hero-cta">
       <button class="btn primary" id="openQuote">Get a Quote</button>
-      <a class="btn soft" href="sms:+18182774433">Text Photos</a>
     </div>
   </div>
 
   <div class="card owner">
-    <img src="bor1.png" alt="Owner of Tidy Builders">
+    <img src="bor1.png">
     <div>
-      <div class="name">Owner-operated</div>
-      <div class="meta">Serving Los Angeles, CA</div>
-      <div class="trust">
-        <div><b>Fast estimates</b> <span>Text photos for quick quotes</span></div>
-        <div><b>Respectful</b> <span>Clean, careful work</span></div>
-        <div><b>Transparent</b> <span>Clear scope before work starts</span></div>
-      </div>
+      <b>Owner-operated</b><br>
+      Serving Los Angeles, CA
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-title">
-    <h2>Services</h2>
-    <p>Click a service to start a quote</p>
-  </div>
-
+  <h2>Services</h2>
   <div class="grid">
+    <div class="service" data-service="General">General Handyman</div>
     <div class="service" data-service="Electrical">Electrical</div>
     <div class="service" data-service="Plumbing">Plumbing</div>
     <div class="service" data-service="Painting">Painting</div>
     <div class="service" data-service="Carpentry">Carpentry</div>
-    <div class="service" data-service="Mounting">Mounting & Installations</div>
-    <div class="service" data-service="EV Charger Installation">EV Charger Installation</div>
+    <div class="service" data-service="EV Charger">EV Charger</div>
   </div>
 </section>
 
-
 </main>
 
-<!-- QUICK QUOTE MODAL (EMAIL + TEXT) -->
-<div class="modal" id="modal" aria-hidden="true">
+<!-- QUOTE MODAL -->
+<div class="modal" id="modal">
   <div class="panel">
-    <div class="panel-head">
-      <div>
-        <strong id="qTitle">Get a Quote</strong><br>
-        <span class="small">Fill this quick form, then email or text it.</span>
-      </div>
-      <button class="btn" id="close" type="button">Close</button>
-    </div>
-
     <div class="panel-body">
-      <ul class="steps" aria-hidden="true">
-        <li class="dot on" id="d1"></li>
-        <li class="dot" id="d2"></li>
-        <li class="dot" id="d3"></li>
-      </ul>
 
-      <!-- STEP 1 -->
-      <div id="qs1">
-        <div class="formgrid">
-          <div class="field">
-            <label>Service</label>
-            <input id="qService" disabled>
-          </div>
-          <div class="field">
-            <label>Job type</label>
-            <select id="qSub">
-              <option value="">Choose…</option>
-              <option>Install</option>
-              <option>Repair</option>
-              <option>Replace</option>
-              <option>Inspect / Diagnose</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Part of the house</label>
-            <select id="qRoom">
-              <option value="">Choose…</option>
-              <option>Kitchen</option>
-              <option>Bathroom</option>
-              <option>Living room</option>
-              <option>Bedroom</option>
-              <option>Garage</option>
-              <option>Basement</option>
-              <option>Yard / Exterior</option>
-              <option>Other</option>
-            </select>
-          </div>
+      <div class="formgrid">
+        <div class="field">
+          <label>Service</label>
+          <select id="qService">
+            <option>General</option>
+            <option>Electrical</option>
+            <option>Plumbing</option>
+            <option>Painting</option>
+            <option>Carpentry</option>
+            <option>EV Charger</option>
+          </select>
         </div>
 
-        <div class="actions-row">
-          <span class="small">Next unlocks after selecting job type + part of house.</span>
-          <button class="btn primary" id="next1" type="button" disabled>Next</button>
+        <div class="field">
+          <label>Job type</label>
+          <select id="qType"></select>
+        </div>
+
+        <div class="field">
+          <label>Part of house</label>
+          <select id="qRoom">
+            <option>Kitchen</option>
+            <option>Bathroom</option>
+            <option>Living room</option>
+            <option>Bedroom</option>
+            <option>Garage</option>
+            <option>Basement</option>
+            <option>Exterior</option>
+          </select>
         </div>
       </div>
 
-      <!-- STEP 2 -->
-      <div id="qs2" style="display:none">
-        <div class="formgrid">
-          <div class="field">
-            <label>Address / Area</label>
-            <input id="qArea" placeholder="Example: Sherman Oaks / 90025">
-          </div>
-          <div class="field">
-            <label>Preferred time</label>
-            <input id="qTime" placeholder="Example: This week, afternoons">
-          </div>
-          <div class="field">
-            <label>How urgent?</label>
-            <select id="qUrgency">
-              <option value="">Choose…</option>
-              <option>Emergency (ASAP)</option>
-              <option>Within 24–48 hours</option>
-              <option>Within a week</option>
-              <option>Flexible</option>
-            </select>
-          </div>
-        </div>
+      <div class="field" style="margin-top:12px">
+        <label>Description</label>
+        <textarea id="qDetails"></textarea>
+      </div>
 
-        <div class="formgrid" style="margin-top:12px">
-          <div class="field" style="grid-column:span 2">
-            <label>Description</label>
-            <textarea id="qDetails" placeholder="What’s happening? What do you want installed/fixed?"></textarea>
-          </div>
-          <div class="field">
-            <label>Photo links (optional)</label>
-            <textarea id="qPhotos" placeholder="Paste links, or write: 'Will text photos'"></textarea>
-          </div>
+      <div class="formgrid" style="margin-top:12px">
+        <div class="field">
+          <label>Name</label>
+          <input id="qName">
         </div>
-
-        <div class="actions-row">
-          <button class="btn soft" id="back2" type="button">Back</button>
-          <button class="btn primary" id="next2" type="button">Next</button>
+        <div class="field">
+          <label>Phone</label>
+          <input id="qPhone">
         </div>
       </div>
 
-      <!-- STEP 3 -->
-      <div id="qs3" style="display:none">
-        <div class="formgrid">
-          <div class="field">
-            <label>Your name</label>
-            <input id="qName" placeholder="Full name">
-          </div>
-          <div class="field">
-            <label>Your phone</label>
-            <input id="qPhone" placeholder="(###) ###-####">
-          </div>
-          <div class="field">
-            <label>Your email (optional)</label>
-            <input id="qEmail" placeholder="name@email.com">
-          </div>
-        </div>
-
-        <div class="actions-row">
-          <button class="btn soft" id="back3" type="button">Back</button>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button class="btn primary" id="sendEmail" type="button">Email</button>
-            <a class="btn soft" id="sendText" href="sms:+18182774433">Text</a>
-          </div>
-        </div>
-
-        <div class="small" style="margin-top:10px">
-          This quick form opens your email/text app (no backend). Use the Full Quote Form to save submissions automatically.
+      <div class="actions-row">
+        <button class="btn" onclick="closeModal()">Close</button>
+        <div>
+          <button class="btn primary" id="sendEmail">Email</button>
+          <a class="btn" id="sendText">Text</a>
         </div>
       </div>
 
@@ -401,122 +243,67 @@ footer a{color:#fff;font-weight:800}
 </div>
 
 <footer>
-  <div class="container">
-    © <span id="y"></span> Tidy Builders · Los Angeles ·
-    <a href="sms:+18182774433">Text (818) 277-4433</a> ·
-    <a href="mailto:tidybuildersco@gmail.com">tidybuildersco@gmail.com</a>
-  </div>
+© Tidy Builders · Los Angeles · (818) 277-4433
 </footer>
 
 <script>
-document.getElementById("y").textContent = new Date().getFullYear();
+const modal=document.getElementById("modal");
+const qService=document.getElementById("qService");
+const qType=document.getElementById("qType");
 
-const modal = document.getElementById("modal");
-const openQuote = document.getElementById("openQuote");
-const closeBtn = document.getElementById("close");
+const jobTypes={
+  General:["Repair","Install","Multiple small jobs"],
+  Electrical:["Outlet / switch","Lighting","Panel / wiring","Troubleshooting"],
+  Plumbing:["Leak","Fixture install","Drain issue","Toilet / sink"],
+  Painting:["Interior","Exterior","Touch-up","Full repaint"],
+  Carpentry:["Door","Trim","Cabinet","Custom work"],
+  "EV Charger":["New install","Upgrade","Inspection"]
+};
 
-const qService = document.getElementById("qService");
-const qSub = document.getElementById("qSub");
-const qRoom = document.getElementById("qRoom");
-const qUrgency = document.getElementById("qUrgency");
-
-const qArea = document.getElementById("qArea");
-const qTime = document.getElementById("qTime");
-const qDetails = document.getElementById("qDetails");
-const qPhotos = document.getElementById("qPhotos");
-
-const qName = document.getElementById("qName");
-const qPhone = document.getElementById("qPhone");
-const qEmail = document.getElementById("qEmail");
-
-const next1 = document.getElementById("next1");
-const next2 = document.getElementById("next2");
-const back2 = document.getElementById("back2");
-const back3 = document.getElementById("back3");
-
-const qs1 = document.getElementById("qs1");
-const qs2 = document.getElementById("qs2");
-const qs3 = document.getElementById("qs3");
-
-function showStep(n){
-  qs1.style.display = (n===1) ? "block" : "none";
-  qs2.style.display = (n===2) ? "block" : "none";
-  qs3.style.display = (n===3) ? "block" : "none";
-}
-
-function openModal(service){
-  qService.value = service || "General Request";
-  modal.classList.add("open");
-  showStep(1);
-  next1.disabled = true;
-  qSub.value = "";
-  qRoom.value = "";
-}
-
-function closeModal(){
-  modal.classList.remove("open");
-}
-
-openQuote.addEventListener("click", () => openModal("General Request"));
-closeBtn.addEventListener("click", closeModal);
-modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-
-document.querySelectorAll(".service").forEach(s => {
-  s.addEventListener("click", () => openModal(s.dataset.service));
-});
-
-function updateNext1(){
-  next1.disabled = !(qSub.value && qRoom.value);
-}
-qSub.addEventListener("change", updateNext1);
-qRoom.addEventListener("change", updateNext1);
-
-next1.addEventListener("click", () => showStep(2));
-back2.addEventListener("click", () => showStep(1));
-next2.addEventListener("click", () => showStep(3));
-back3.addEventListener("click", () => showStep(2));
-
-function buildSummary(){
-  return (
-`Service: ${qService.value || "-"}
-Job type: ${qSub.value || "-"}
-Part of house: ${qRoom.value || "-"}
-Urgency: ${qUrgency.value || "-"}
-
-Area: ${qArea.value || "-"}
-Preferred time: ${qTime.value || "-"}
-
-Description:
-${qDetails.value || "-"}
-
-Photo links:
-${qPhotos.value || "-"}
-
-Customer:
-Name: ${qName.value || "-"}
-Phone: ${qPhone.value || "-"}
-Email: ${qEmail.value || "-"}
-`);
-}
-
-function updateTextLink(){
-  const sms = `sms:+18182774433?&body=${encodeURIComponent(buildSummary())}`;
-  document.getElementById("sendText").setAttribute("href", sms);
-}
-
-["input","change"].forEach(evt=>{
-  [qSub,qRoom,qUrgency,qArea,qTime,qDetails,qPhotos,qName,qPhone,qEmail].forEach(el=>{
-    el.addEventListener(evt, updateTextLink);
+function updateTypes(){
+  qType.innerHTML="";
+  jobTypes[qService.value].forEach(t=>{
+    const o=document.createElement("option");
+    o.textContent=t;
+    qType.appendChild(o);
   });
-});
-updateTextLink();
+}
+qService.onchange=updateTypes;
+updateTypes();
 
-document.getElementById("sendEmail").addEventListener("click", () => {
-  const subject = encodeURIComponent(`Quote Request — ${qService.value || "Tidy Builders"}`);
-  const body = encodeURIComponent(buildSummary());
-  window.location.href = `mailto:tidybuildersco@gmail.com?subject=${subject}&body=${body}`;
+document.getElementById("openQuote").onclick=()=>modal.classList.add("open");
+document.querySelectorAll(".service").forEach(s=>{
+  s.onclick=()=>{
+    qService.value=s.dataset.service;
+    updateTypes();
+    modal.classList.add("open");
+  };
 });
+function closeModal(){modal.classList.remove("open");}
+
+document.getElementById("sendEmail").onclick=()=>{
+  const body=
+`Service: ${qService.value}
+Job: ${qType.value}
+Room: ${qRoom.value}
+
+Details:
+${qDetails.value}
+
+Name: ${qName.value}
+Phone: ${qPhone.value}`;
+  location.href="mailto:tidybuildersco@gmail.com?subject=Quote Request&body="+encodeURIComponent(body);
+};
+
+document.getElementById("sendText").onclick=()=>{
+  const body=
+`Service: ${qService.value}
+Job: ${qType.value}
+Room: ${qRoom.value}
+${qDetails.value}
+${qName.value} ${qPhone.value}`;
+  location.href="sms:+18182774433?&body="+encodeURIComponent(body);
+};
 </script>
 
 </body>
