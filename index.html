@@ -46,11 +46,11 @@ header{
 .nav{
   display:flex;align-items:center;justify-content:space-between;gap:18px;
   padding:12px 0;
-  height:110px;
+  height:120px;
 }
 .brand{display:flex;align-items:center;height:100%}
 .brand img{
-  height:150px;
+  height:170px;
   max-height:100%;
   object-fit:contain;
 }
@@ -64,22 +64,36 @@ header{
 }
 .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
 .btn.soft{background:var(--soft);color:#0b3aa8;border-color:#dbe7ff}
+.btn.big{
+  padding:14px 20px;
+  font-size:16px;
+  border-radius:14px;
+}
 
 /* HERO */
 .hero{
-  padding:70px 0 40px;
+  padding:58px 0 40px;
   display:grid;grid-template-columns:1.12fr .88fr;gap:34px;
   align-items:center;
 }
 .kicker{
   display:inline-flex;align-items:center;gap:10px;
-  padding:8px 12px;border-radius:999px;
+  padding:9px 14px;border-radius:999px;
   background:var(--soft);border:1px solid #dbe7ff;
-  color:#0b3aa8;font-weight:800;font-size:13px;
+  color:#0b3aa8;font-weight:800;font-size:15px;
 }
-h1{margin:14px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
+h1{margin:10px 0;font-size:50px;line-height:1.05;letter-spacing:-1.2px}
 .hero p{margin:0 0 22px;color:var(--muted);font-size:18px;max-width:60ch}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ICONS */
+.icon{
+  display:inline-block;
+  margin-right:8px;
+  font-size:20px;
+  line-height:1;
+  transform:translateY(2px);
+}
 
 /* CARD */
 .card{
@@ -229,11 +243,12 @@ footer a{color:#fff;font-weight:800}
 /* MOBILE */
 @media (max-width:900px){
   .container{padding:0 16px}
-  .brand img{height:120px}
+  .brand img{height:140px}
   h1{font-size:34px}
   .hero{grid-template-columns:1fr;padding:46px 0 26px}
   .btn{padding:8px 10px;font-size:13px}
-  .nav{height:96px}
+  .btn.big{padding:12px 16px;font-size:15px}
+  .nav{height:104px}
   .owner img{width:170px}
 }
 </style>
@@ -261,8 +276,7 @@ footer a{color:#fff;font-weight:800}
     <h1>Clean work. Clear communication. Done right.</h1>
     <p>Electrical, plumbing, painting, carpentry, mounting, installations, and EV chargers.</p>
     <div class="hero-cta">
-      <button class="btn primary" id="openQuote" type="button">Get a Quote</button>
-      <a class="btn soft" href="sms:+18182774433">Text Photos</a>
+      <button class="btn primary big" id="openQuote" type="button">Get a Quote</button>
     </div>
   </div>
 
@@ -288,27 +302,27 @@ footer a{color:#fff;font-weight:800}
 
   <div class="grid">
     <div class="service" data-service="General">
-      <h3>General Handyman</h3>
+      <h3><span class="icon">🛠</span>General Handyman</h3>
       <p>Multiple small jobs, repairs, and custom requests.</p>
     </div>
     <div class="service" data-service="Electrical">
-      <h3>Electrical</h3>
+      <h3><span class="icon">⚡</span>Electrical</h3>
       <p>Outlets, switches, lighting, troubleshooting.</p>
     </div>
     <div class="service" data-service="Plumbing">
-      <h3>Plumbing</h3>
+      <h3><span class="icon">🚿</span>Plumbing</h3>
       <p>Leaks, fixtures, drains, toilets.</p>
     </div>
     <div class="service" data-service="Painting">
-      <h3>Painting</h3>
+      <h3><span class="icon">🎨</span>Painting</h3>
       <p>Interior, exterior, touch-ups, full repaint.</p>
     </div>
     <div class="service" data-service="Carpentry">
-      <h3>Carpentry</h3>
+      <h3><span class="icon">🪚</span>Carpentry</h3>
       <p>Doors, trim, cabinets, custom work.</p>
     </div>
     <div class="service" data-service="EV Charger Installation">
-      <h3>EV Charger Installation</h3>
+      <h3><span class="icon">🔌</span>EV Charger Installation</h3>
       <p>New install, upgrade, inspection.</p>
     </div>
   </div>
@@ -317,7 +331,7 @@ footer a{color:#fff;font-weight:800}
 <!-- ✅ END SECTION: ABOUT -->
 <section class="section">
   <div class="card owner about">
-    <img src="borh.jpg" alt="Borhan Kheiri">
+    <img src="borh.PNG" alt="Borhan Kheiri">
     <div>
       <h2 class="headline">About</h2>
       <p class="sub"><b>Borhan Kheiri</b> · Owner, Tidy Builders</p>
@@ -325,7 +339,7 @@ footer a{color:#fff;font-weight:800}
         Borhan handles jobs personally and treats every home with respect. His goal is simple:
         be the one reliable pro you can call for anything your home needs, so you don’t have to hire multiple people.
       </p>
-      <p class="note">Best way to reach him: text photos for a fast estimate.</p>
+      <p class="note">Best way to reach him: text for a fast estimate.</p>
     </div>
   </div>
 </section>
